@@ -1,27 +1,17 @@
 import React from 'react';
 import { Play, Star, ChevronRight } from 'lucide-react';
-import plantImg from '../assets/eb0351a5771ed55c7f3454bcce697dfe63237769.png';
-import backgroundPlant from '../assets/fa0765984e44f85e1a04562f820f1492949a1257.jpg';
+import plantImg from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png'; // Aglaonema plant
 import avatar1 from '../assets/avatar-1.png';
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[#0f1f10]"
+      className="relative min-h-screen flex items-center pt-32 pb-20 bg-transparent"
     >
       {/* Background Glows */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#4ade80]/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-      {/* Giant Round Topiary Plant in Background/Center */}
-      <div className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none">
-        <img
-          src={backgroundPlant}
-          alt="Large round topiary plant background decoration"
-          className="w-[300px] sm:w-[480px] md:w-[650px] lg:w-[800px] h-auto object-contain opacity-25 mix-blend-lighten select-none pointer-events-none translate-y-16"
-        />
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

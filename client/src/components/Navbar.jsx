@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Search, ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
+import { Search, ShoppingBag, Menu, X, ChevronDown } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +16,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-1 group">
+          <a href="#home" className="flex items-center gap-2 group">
+            <img src={logoImg} alt="FloraVision Logo" className="w-8 h-8 object-contain" />
             <span className="text-2xl font-sans font-extrabold text-white tracking-tight">
               FloraVision<span className="text-[#4ade80] font-sans">.</span>
             </span>
@@ -37,7 +39,7 @@ const Navbar = () => {
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 className="flex items-center gap-1 text-sm font-medium text-white hover:text-[#4ade80] transition-colors duration-300 cursor-pointer"
               >
-                <span>How To Take</span>
+                <span>Plants Type</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               
@@ -95,8 +97,15 @@ const Navbar = () => {
               className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 relative cursor-pointer"
               aria-label="Cart"
             >
-              <ShoppingCart className="w-5 h-5" />
+              <ShoppingBag className="w-5 h-5" />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#4ade80] rounded-full"></span>
+            </button>
+            <button
+              onClick={toggleMobileMenu}
+              className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 cursor-pointer"
+              aria-label="Menu"
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -112,7 +121,7 @@ const Navbar = () => {
               className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 relative cursor-pointer"
               aria-label="Cart"
             >
-              <ShoppingCart className="w-5 h-5" />
+              <ShoppingBag className="w-5 h-5" />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#4ade80] rounded-full"></span>
             </button>
             <button
@@ -138,7 +147,7 @@ const Navbar = () => {
             Home
           </a>
           <div className="py-2">
-            <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">How To Take</p>
+            <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Plants Type</p>
             <div className="pl-4 space-y-2 border-l border-[#233b23]">
               <a
                 href="#watering"

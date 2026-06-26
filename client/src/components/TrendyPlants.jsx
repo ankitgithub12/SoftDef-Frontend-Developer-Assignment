@@ -1,24 +1,14 @@
 import React from 'react';
 import { ShoppingBag } from 'lucide-react';
 import SectionTitle from './SectionTitle';
-import plant1 from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png';
-import plant2 from '../assets/444fba49a2674d2262c5455bcc501cb91b314490.png';
-import backgroundPlant from '../assets/fa0765984e44f85e1a04562f820f1492949a1257.jpg';
+import plant1 from '../assets/b48312dbddc890f7f35ef3964ae1e7900b89782c.png'; // Plantain Lilies
+import plant2 from '../assets/95e728282f4fb901ee2edc80783c2fbd7df490c2.png'; // Succulent in light blue/cyan pot
 
 const TrendyPlants = () => {
   return (
-    <section id="trending" className="py-24 bg-[#0f1f10] relative overflow-hidden">
+    <section id="trending" className="py-24 bg-transparent relative">
       {/* Background decoration glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#4ade80]/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-      {/* Giant Round Topiary Plant in Background/Center of this section */}
-      <div className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none opacity-20">
-        <img
-          src={backgroundPlant}
-          alt="Large round topiary plant background decoration"
-          className="w-[300px] sm:w-[480px] md:w-[650px] lg:w-[800px] h-auto object-contain mix-blend-lighten select-none pointer-events-none translate-y-10"
-        />
-      </div>
 
       <div className="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         {/* Section Heading */}

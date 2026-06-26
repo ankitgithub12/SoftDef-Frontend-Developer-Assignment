@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionTitle from './SectionTitle';
-import plantImg from '../assets/eb0351a5771ed55c7f3454bcce697dfe63237769.png';
+import plantImg from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png';
 
 const BestO2 = () => {
   return (
@@ -14,15 +14,15 @@ const BestO2 = () => {
         <SectionTitle title="Our Best o2" />
 
         {/* Full-width glass card */}
-        <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] overflow-hidden border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 shadow-2xl group">
+        <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] overflow-visible border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 shadow-2xl group">
           <div className="flex flex-col lg:flex-row items-center p-8 sm:p-10 md:p-12 gap-8 lg:gap-12">
             
             {/* Left: Plant Image */}
-            <div className="w-full lg:w-1/2 flex justify-center bg-[#0f1f10]/30 rounded-[35px] p-6 overflow-hidden">
+            <div className="w-full lg:w-1/2 flex justify-center relative z-10 lg:-mt-24 lg:-mb-16">
               <img
                 src={plantImg}
                 alt="Variegated Aglaonema plant in white pot"
-                className="w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
+                className="w-64 h-64 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)]"
               />
             </div>
 

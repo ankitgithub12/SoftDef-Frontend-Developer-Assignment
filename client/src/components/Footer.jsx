@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logoImg from '../assets/logo.png';
 
 // Custom Lucide-style SVG social icons
 const FacebookIcon = (props) => (
@@ -63,7 +64,8 @@ const Footer = () => {
           
           {/* Logo and Tagline */}
           <div className="space-y-6">
-            <a href="#home" className="flex items-center gap-1 group">
+            <a href="#home" className="flex items-center gap-2 group">
+              <img src={logoImg} alt="FloraVision Logo" className="w-8 h-8 object-contain" />
               <span className="text-2xl font-extrabold text-white tracking-tight">
                 FloraVision<span className="text-[#4ade80]">.</span>
               </span>

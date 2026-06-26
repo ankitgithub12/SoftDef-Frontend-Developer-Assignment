@@ -1,5 +1,6 @@
 import React from 'react';
 import PlantCard from './PlantCard';
+import SectionTitle from './SectionTitle';
 
 import plant1 from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png'; // Aglaonema
 import plant2 from '../assets/b48312dbddc890f7f35ef3964ae1e7900b89782c.png'; // Plantain Lilies
@@ -63,15 +64,7 @@ const TopSellingPlants = () => {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         
         {/* Section Title with Custom Brackets */}
-        <div className="flex items-center justify-center mb-[85px]">
-          <h2 className="relative px-7 py-2.5 text-3xl sm:text-[40px] font-bold text-white tracking-[0.5px] leading-tight text-center select-none font-sans inline-block">
-            {/* Left Bracket */}
-            <span className="absolute left-0 top-0 bottom-0 w-[14px] border-l-2 border-t-2 border-b-2 border-[#D8B04C] rounded-l-[10px]"></span>
-            Our Top Selling Plants
-            {/* Right Bracket */}
-            <span className="absolute right-0 top-0 bottom-0 w-[14px] border-r-2 border-t-2 border-b-2 border-[#D8B04C] rounded-r-[10px]"></span>
-          </h2>
-        </div>
+        <SectionTitle title="Our Top Selling Plants" className="mb-[85px]" />
 
         {/* 3-column grid (stacks to 1 col on mobile, 2 col on sm/md) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[60px_40px]">
