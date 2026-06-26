@@ -30,11 +30,10 @@ const Hero = () => {
           <div className="lg:col-span-7 space-y-8 md:space-y-10 text-left animate-fade-in-up">
             <div className="space-y-4 md:space-y-6">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-extrabold text-white leading-none tracking-tight">
-                Earth's Exhale
+                Earth’s Exhale
               </h1>
               <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed font-sans font-normal">
-                Earth Exhale symbolizes the purity and vitality of the Earth's natural environment. 
-                From lush indoor greens to vibrant outdoor blooms, our plants are crafted to refresh and elevate your living environment.
+                "Earth Exhale" symbolizes the purity and vitality of the Earth's natural environment and its essential role in sustaining life.
               </p>
             </div>
 
@@ -42,12 +41,12 @@ const Hero = () => {
             <div className="flex flex-wrap items-center gap-5 sm:gap-6 font-sans">
               <a
                 href="#shop"
-                className="bg-white hover:bg-gray-100 text-black px-8 py-3.5 rounded-full text-sm sm:text-base font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-white/10 text-center cursor-pointer"
+                className="border border-white/45 bg-transparent hover:bg-white hover:text-black text-white px-8 py-3.5 rounded-[12px] text-sm sm:text-base font-bold tracking-wide transition-all duration-300 text-center cursor-pointer shadow-lg hover:shadow-white/5"
               >
                 Buy Now
               </a>
               <button className="flex items-center gap-3 text-white hover:text-[#4ade80] transition-colors duration-300 group cursor-pointer">
-                <div className="w-12 h-12 rounded-full border border-white/30 group-hover:border-[#4ade80] flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#4ade80] transition-all duration-300">
+                <div className="w-12 h-12 rounded-full border border-white/40 group-hover:border-[#4ade80] flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#4ade80] transition-all duration-300">
                   <Play className="w-4 h-4 fill-current ml-0.5" />
                 </div>
                 <span className="text-sm sm:text-base font-bold tracking-wider">
@@ -57,12 +56,12 @@ const Hero = () => {
             </div>
 
             {/* Testimonial Box */}
-            <div className="bg-[#1a2e1a]/35 backdrop-blur-md p-6 border border-[#233b23]/50 rounded-[28px] max-w-sm shadow-2xl transition-all hover:border-[#4ade80]/30">
+            <div className="bg-[#1c2919]/72 backdrop-blur-xl p-6 border border-white/8 rounded-[28px] max-w-sm shadow-2xl transition-all duration-300 hover:border-white/15 hover:bg-[#203020]/80">
               <div className="flex items-center gap-3 mb-2.5">
                 <img
                   src={avatar1}
                   alt="Ronnie Hamill"
-                  className="w-10 h-10 rounded-full border border-[#4ade80] object-cover"
+                  className="w-10 h-10 rounded-full border border-white/20 object-cover"
                 />
                 <div>
                   <h4 className="text-white font-sans font-bold text-sm tracking-wide">
@@ -72,7 +71,7 @@ const Hero = () => {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className="w-3.5 h-3.5 text-[#e9f908] fill-[#e9f908]"
+                        className="w-3 h-3 text-[#e9f908] fill-[#e9f908]"
                       />
                     ))}
                   </div>
@@ -85,43 +84,56 @@ const Hero = () => {
           </div>
 
           {/* Right Plant Card Column */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up">
-            <div className="bg-[#1a2e1a]/35 backdrop-blur-xl w-72 sm:w-80 p-6 border border-[#233b23]/50 rounded-[45px] shadow-2xl relative group hover:border-[#4ade80]/40 transition-all duration-500">
-              {/* Plant Image Container */}
-              <div className="flex justify-center mb-5 bg-[#0f1f10]/30 rounded-[30px] p-4 overflow-hidden">
-                <img
-                  src={plantImg}
-                  alt="Aglaonema plant"
-                  className="w-48 h-48 object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.3)]"
+          <div className="lg:col-span-5 flex justify-center lg:justify-end items-center pt-20 lg:pt-0 animate-fade-in-up">
+            <div className="relative flex flex-col pt-[130px] pb-6 px-6 font-sans w-80 min-h-[410px] h-[410px] transition-all duration-500 group cursor-default overflow-visible">
+              {/* Custom Wavy SVG Background matching the PlantCard layout */}
+              <svg
+                className="absolute inset-0 w-full h-full -z-10 pointer-events-none drop-shadow-[0_12px_28px_rgba(0,0,0,0.35)] group-hover:drop-shadow-[0_20px_45px_rgba(0,0,0,0.55)] transition-all duration-500"
+                viewBox="0 0 350 450"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M 0,80 C 0,55 15,40 40,40 C 90,40 120,65 160,65 C 210,65 260,20 310,20 C 335,20 350,35 350,60 L 350,422 C 350,438 338,450 322,450 L 28,450 C 12,450 0,438 0,422 Z"
+                  fill="rgba(28, 41, 25, 0.72)"
+                  stroke="rgba(255, 255, 255, 0.08)"
+                  strokeWidth="1.5"
+                  className="transition-all duration-500 group-hover:stroke-white/15 group-hover:fill-[rgba(32,48,29,0.85)]"
                 />
-              </div>
+              </svg>
 
-              {/* Plant Details */}
-              <div className="space-y-4 font-sans text-left">
+              {/* Floating Plant Image */}
+              <img
+                src={plantImg}
+                alt="Aglaonema plant"
+                className="absolute top-[-70px] left-1/2 -translate-x-1/2 w-[210px] h-[210px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none"
+              />
+
+              {/* Info Area (Grouped at the bottom) */}
+              <div className="flex flex-col text-left mt-auto space-y-4">
                 <div>
-                  <span className="text-gray-400 text-xs font-semibold tracking-wider">
+                  <span className="text-[13px] font-medium text-gray-400 uppercase tracking-wider">
                     Indoor Plant
                   </span>
                   <div className="flex items-center justify-between mt-1">
-                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                    <h3 className="text-[21px] font-semibold text-white tracking-tight leading-tight">
                       Aglaonema plant
                     </h3>
-                    <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                    <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white transition-all group-hover:translate-x-1" />
                   </div>
                 </div>
 
                 <a
                   href="#shop"
-                  className="w-full bg-[#1a2e1a]/40 hover:bg-white border border-white/35 text-white hover:text-black py-3 rounded-2xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center shadow-md cursor-pointer"
+                  className="w-full border border-white/40 bg-transparent hover:bg-white hover:text-black py-3 rounded-[12px] text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center cursor-pointer text-white"
                 >
                   Buy Now
                 </a>
 
-                {/* Card Pagination Dots */}
-                <div className="flex items-center justify-center gap-1.5 pt-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer"></span>
-                  <span className="w-4 h-1.5 rounded-full bg-white cursor-pointer"></span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer"></span>
+                {/* Card Pagination Dots: first dash active, others inactive dots */}
+                <div className="flex items-center justify-center gap-1.5 pt-1">
+                  <span className="w-4 h-1.5 rounded-full bg-white cursor-pointer transition-all"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer transition-all"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer transition-all"></span>
                 </div>
               </div>
             </div>
