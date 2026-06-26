@@ -1,21 +1,20 @@
 @import "tailwindcss";
 
-/* ===== Custom Theme ===== */
 @theme {
-  --color-flora-bg: #0A1F12;
-  --color-flora-bg-light: #0D1F17;
-  --color-flora-card: #1A2E23;
-  --color-flora-card-hover: #213A2C;
-  --color-flora-primary: #2D5A3D;
-  --color-flora-primary-light: #3A7D52;
-  --color-flora-accent: #E5B842;
-  --color-flora-accent-light: #F3C655;
+  --color-flora-bg: #0f1f10;
+  --color-flora-bg-light: #152515;
+  --color-flora-card: #1a2e1a;
+  --color-flora-card-hover: #223c22;
+  --color-flora-primary: #152515;
+  --color-flora-primary-light: #1a2e1a;
+  --color-flora-accent: #4ade80;
+  --color-flora-accent-light: #86efac;
   --color-flora-text: #FFFFFF;
-  --color-flora-text-secondary: #A8C5B0;
-  --color-flora-text-muted: #6B8F75;
-  --color-flora-border: #2A4A35;
-  --color-flora-glass: rgba(26, 46, 35, 0.7);
-  --color-flora-glass-border: rgba(74, 124, 89, 0.25);
+  --color-flora-text-secondary: #9CA3AF;
+  --color-flora-text-muted: #6B7280;
+  --color-flora-border: #233b23;
+  --color-flora-glass: rgba(26, 46, 26, 0.7);
+  --color-flora-glass-border: rgba(74, 222, 128, 0.2);
 
   --font-poppins: "Poppins", sans-serif;
 }

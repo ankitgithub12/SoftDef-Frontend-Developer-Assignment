@@ -1,37 +1,49 @@
 import React, { useState } from 'react';
-import { Leaf } from 'lucide-react';
 
-const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Plants Type', href: '#trending' },
-  { label: 'More', href: '#shop' },
-  { label: 'Contact', href: '#contact' },
-];
-
-/* Inline SVG social icons */
-const FacebookIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+// Custom Lucide-style SVG social icons
+const FacebookIcon = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
-const TwitterIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+const TwitterIcon = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </svg>
 );
 
-const InstagramIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+const LinkedinIcon = (props) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
   </svg>
 );
-
-const socialLinks = [
-  { icon: FacebookIcon, label: 'Facebook', href: '#' },
-  { icon: TwitterIcon, label: 'Twitter', href: '#' },
-  { icon: InstagramIcon, label: 'Instagram', href: '#' },
-];
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -39,95 +51,112 @@ const Footer = () => {
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (email) {
+      alert(`Subscribed: ${email}`);
       setEmail('');
     }
   };
 
   return (
-    <footer className="relative bg-flora-bg-light border-t border-flora-border/50 pt-16 pb-8 text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 pb-12 border-b border-flora-border/30">
-          {/* Brand Column */}
+    <footer id="contact" className="relative bg-[#0b180c] border-t border-[#233b23] pt-16 pb-8 text-left font-sans">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 pb-12 border-b border-[#233b23]/50">
+          
+          {/* Logo and Tagline */}
           <div className="space-y-6">
-            <a href="#home" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-flora-accent/20 flex items-center justify-center group-hover:bg-flora-accent/30 transition-colors duration-300">
-                <Leaf className="w-5 h-5 text-flora-accent" />
-              </div>
-              <span className="text-lg font-semibold text-flora-text tracking-tight">
-                FloraVision<span className="text-flora-accent">.</span>
+            <a href="#home" className="flex items-center gap-1 group">
+              <span className="text-2xl font-extrabold text-white tracking-tight">
+                FloraVision<span className="text-[#4ade80]">.</span>
               </span>
             </a>
-            <p className="text-flora-text-secondary text-sm leading-relaxed max-w-xs">
-              "There is also a clear, green, fresh aroma; and since flower heads are not typically..."
+            <p className="text-gray-300 text-sm leading-relaxed max-w-sm font-normal">
+              From lush indoor greens to vibrant outdoor blooms, our plants are crafted to refresh and elevate your living environment.
             </p>
+            
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-9 h-9 rounded-full bg-flora-card hover:bg-flora-accent/20 flex items-center justify-center text-flora-text-secondary hover:text-flora-accent transition-all duration-300 border border-flora-border/50 hover:border-flora-accent/30"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-4.5 h-4.5" />
-                </a>
-              ))}
+              <a
+                href="#facebook"
+                className="w-10 h-10 rounded-full bg-[#1a2e1a] hover:bg-[#4ade80] flex items-center justify-center text-gray-300 hover:text-black border border-[#233b23] hover:border-[#4ade80] transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <FacebookIcon className="w-4.5 h-4.5" />
+              </a>
+              <a
+                href="#twitter"
+                className="w-10 h-10 rounded-full bg-[#1a2e1a] hover:bg-[#4ade80] flex items-center justify-center text-gray-300 hover:text-black border border-[#233b23] hover:border-[#4ade80] transition-all duration-300"
+                aria-label="Twitter"
+              >
+                <TwitterIcon className="w-4.5 h-4.5" />
+              </a>
+              <a
+                href="#linkedin"
+                className="w-10 h-10 rounded-full bg-[#1a2e1a] hover:bg-[#4ade80] flex items-center justify-center text-gray-300 hover:text-black border border-[#233b23] hover:border-[#4ade80] transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon className="w-4.5 h-4.5" />
+              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-flora-text font-bold text-base tracking-wide">
+          {/* Quick Links Column */}
+          <div className="space-y-4 sm:pl-4 lg:pl-12">
+            <h4 className="text-white font-bold text-base tracking-wide uppercase">
               Quick Links
             </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-flora-text-secondary hover:text-flora-accent text-sm transition-colors duration-300 font-medium"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+            <ul className="space-y-3 font-medium">
+              <li>
+                <a href="#home" className="text-gray-300 hover:text-[#4ade80] text-sm transition-colors duration-300">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#trending" className="text-gray-300 hover:text-[#4ade80] text-sm transition-colors duration-300">
+                  Types Of Plant's
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-300 hover:text-[#4ade80] text-sm transition-colors duration-300">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#privacy" className="text-gray-300 hover:text-[#4ade80] text-sm transition-colors duration-300">
+                  Privacy
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Newsletter Column */}
           <div className="space-y-4">
-            <h4 className="text-flora-text font-bold text-base tracking-wide">
-              For Every Update
+            <h4 className="text-white font-bold text-base tracking-wide uppercase">
+              For Every Update.
             </h4>
-            <form
-              onSubmit={handleSubscribe}
-              className="flex items-stretch gap-2 max-w-sm mt-2"
-            >
+            <form onSubmit={handleSubscribe} className="flex items-stretch gap-2 mt-2 max-w-sm">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Email"
-                className="flex-1 bg-flora-card border border-flora-border rounded-xl px-4 py-2.5 text-sm text-flora-text placeholder:text-flora-text-muted focus:outline-none focus:border-flora-accent transition-all duration-300"
+                className="flex-1 bg-[#1a2e1a] border border-[#233b23] rounded-xl px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#4ade80] transition-all duration-300"
                 aria-label="Email for newsletter"
                 required
               />
               <button
                 type="submit"
-                className="bg-flora-accent hover:bg-flora-accent-light text-[#0A1F12] font-semibold px-6 rounded-xl text-sm transition-colors duration-300 flex items-center justify-center cursor-pointer"
-                aria-label="Subscribe to newsletter"
+                className="bg-white hover:bg-gray-100 text-black font-bold px-6 rounded-xl text-sm transition-colors duration-300 flex items-center justify-center cursor-pointer"
               >
-                Subscribe
+                SUBSCRIBE
               </button>
             </form>
           </div>
+
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6">
-          {/* Copyright */}
-          <p className="text-flora-text-secondary text-sm text-center">
-            FloraVision @ all right reserved
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-gray-400 text-sm text-center md:text-left">
+            FloraVision © all right reserve
           </p>
         </div>
       </div>
@@ -136,4 +165,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

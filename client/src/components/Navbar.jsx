@@ -1,143 +1,184 @@
 import React, { useState } from 'react';
-import { Search, ShoppingCart, User, Menu, X, Leaf } from 'lucide-react';
-
-const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Plants Type', href: '#trending' },
-  { label: 'More', href: '#shop' },
-  { label: 'Contact', href: '#contact' },
-];
+import { Search, ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-flora-bg/80 backdrop-blur-xl border-b border-flora-border/50"
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f1f10]/95 backdrop-blur-md border-b border-[#233b23]/50">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-20">
+          
           {/* Logo */}
-          <a
-            href="#home"
-            className="flex items-center gap-2 group"
-            aria-label="FloraVision Home"
-          >
-            <div className="w-8 h-8 rounded-lg bg-flora-accent/20 flex items-center justify-center group-hover:bg-flora-accent/30 transition-colors duration-300">
-              <Leaf className="w-5 h-5 text-flora-accent" />
-            </div>
-            <span className="text-lg font-semibold text-flora-text tracking-tight">
-              FloraVision<span className="text-flora-accent">.</span>
+          <a href="#home" className="flex items-center gap-1 group">
+            <span className="text-2xl font-sans font-extrabold text-white tracking-tight">
+              FloraVision<span className="text-[#4ade80] font-sans">.</span>
             </span>
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="px-3 lg:px-4 py-2 text-sm text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 rounded-lg hover:bg-flora-accent/5 font-medium"
+          <div className="hidden md:flex items-center gap-8 font-sans">
+            <a
+              href="#home"
+              className="text-sm font-medium text-white hover:text-[#4ade80] transition-colors duration-300"
+            >
+              Home
+            </a>
+            
+            {/* Dropdown Link */}
+            <div className="relative">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                className="flex items-center gap-1 text-sm font-medium text-white hover:text-[#4ade80] transition-colors duration-300 cursor-pointer"
               >
-                {link.label}
-              </a>
-            ))}
+                <span>How To Take</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  className="absolute left-0 mt-2 w-48 rounded-xl bg-[#1a2e1a] border border-[#233b23] py-2 shadow-xl animate-fade-in-up z-50"
+                >
+                  <a
+                    href="#watering"
+                    className="block px-4 py-2.5 text-xs text-gray-300 hover:text-white hover:bg-[#223c22] transition-colors"
+                  >
+                    Watering Guide
+                  </a>
+                  <a
+                    href="#sunlight"
+                    className="block px-4 py-2.5 text-xs text-gray-300 hover:text-white hover:bg-[#223c22] transition-colors"
+                  >
+                    Sunlight Exposure
+                  </a>
+                  <a
+                    href="#fertilizing"
+                    className="block px-4 py-2.5 text-xs text-gray-300 hover:text-white hover:bg-[#223c22] transition-colors"
+                  >
+                    Fertilizing & Soil
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="#shop"
+              className="text-sm font-medium text-white hover:text-[#4ade80] transition-colors duration-300"
+            >
+              Plant
+            </a>
+            <a
+              href="#contact"
+              className="text-sm font-medium text-white hover:text-[#4ade80] transition-colors duration-300"
+            >
+              Contact
+            </a>
           </div>
 
-          {/* Desktop Icons */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop Right Side Icons */}
+          <div className="hidden md:flex items-center gap-4">
             <button
-              className="p-2.5 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 rounded-lg hover:bg-flora-accent/5 cursor-pointer"
+              className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 cursor-pointer"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
             </button>
             <button
-              className="p-2.5 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 rounded-lg hover:bg-flora-accent/5 relative cursor-pointer"
-              aria-label="Shopping Cart"
+              className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 relative cursor-pointer"
+              aria-label="Cart"
             >
               <ShoppingCart className="w-5 h-5" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-flora-accent rounded-full"></span>
-            </button>
-            <button
-              className="p-2.5 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 rounded-lg hover:bg-flora-accent/5 cursor-pointer"
-              aria-label="User Account"
-            >
-              <User className="w-5 h-5" />
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#4ade80] rounded-full"></span>
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Menu Button & Icons */}
+          <div className="flex md:hidden items-center gap-3">
             <button
-              className="p-2 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 cursor-pointer"
+              className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 cursor-pointer"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
+            </button>
+            <button
+              className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 relative cursor-pointer"
+              aria-label="Cart"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#4ade80] rounded-full"></span>
             </button>
             <button
               onClick={toggleMobileMenu}
-              className="p-2 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 cursor-pointer"
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
+              className="p-2 text-gray-300 hover:text-[#4ade80] transition-colors duration-300 cursor-pointer"
+              aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
-      <div
-        className={`md:hidden fixed inset-0 top-16 mobile-menu-overlay transition-all duration-300 ${
-          isMobileMenuOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <div
-          className={`bg-flora-bg border-t border-flora-border transition-transform duration-300 ${
-            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-4'
-          }`}
-        >
-          <div className="px-4 py-4 space-y-1">
-            {navLinks.map((link) => (
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-[#0f1f10] border-t border-[#233b23] py-4 px-6 space-y-3 font-sans">
+          <a
+            href="#home"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block py-2 text-base text-gray-300 hover:text-white transition-colors"
+          >
+            Home
+          </a>
+          <div className="py-2">
+            <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">How To Take</p>
+            <div className="pl-4 space-y-2 border-l border-[#233b23]">
               <a
-                key={link.label}
-                href={link.href}
+                href="#watering"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-4 py-3 text-flora-text-secondary hover:text-flora-accent hover:bg-flora-accent/5 rounded-lg transition-colors duration-300 font-medium"
+                className="block text-sm text-gray-300 hover:text-white"
               >
-                {link.label}
+                Watering Guide
               </a>
-            ))}
-            <div className="flex items-center gap-4 px-4 pt-4 border-t border-flora-border mt-4">
-              <button
-                className="p-2.5 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 rounded-lg hover:bg-flora-accent/5 cursor-pointer"
-                aria-label="Shopping Cart"
+              <a
+                href="#sunlight"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-sm text-gray-300 hover:text-white"
               >
-                <ShoppingCart className="w-5 h-5" />
-              </button>
-              <button
-                className="p-2.5 text-flora-text-secondary hover:text-flora-accent transition-colors duration-300 rounded-lg hover:bg-flora-accent/5 cursor-pointer"
-                aria-label="User Account"
+                Sunlight Exposure
+              </a>
+              <a
+                href="#fertilizing"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-sm text-gray-300 hover:text-white"
               >
-                <User className="w-5 h-5" />
-              </button>
+                Fertilizing & Soil
+              </a>
             </div>
           </div>
+          <a
+            href="#shop"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block py-2 text-base text-gray-300 hover:text-white transition-colors"
+          >
+            Plant
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block py-2 text-base text-gray-300 hover:text-white transition-colors"
+          >
+            Contact
+          </a>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
