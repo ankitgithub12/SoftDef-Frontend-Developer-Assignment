@@ -1,71 +1,80 @@
 import React from 'react';
-import SectionTitle from './SectionTitle';
 import PlantCard from './PlantCard';
 
-import plant1 from '../assets/eb0351a5771ed55c7f3454bcce697dfe63237769.png';
-import plant2 from '../assets/5196aba58f7006d90ec0712ac1d01688cde1a537.png';
-import plant3 from '../assets/b48312dbddc890f7f35ef3964ae1e7900b89782c.png';
-import plant4 from '../assets/6d90916507b2b3030961c99c6af0ebac97b86c78.png';
-import plant5 from '../assets/95e728282f4fb901ee2edc80783c2fbd7df490c2.png';
-import plant6 from '../assets/fa0765984e44f85e1a04562f820f1492949a1257.jpg';
+import plant1 from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png'; // Aglaonema
+import plant2 from '../assets/b48312dbddc890f7f35ef3964ae1e7900b89782c.png'; // Plantain Lilies
+import plant3 from '../assets/6d90916507b2b3030961c99c6af0ebac97b86c78.png'; // Cactus
+import plant4 from '../assets/5196aba58f7006d90ec0712ac1d01688cde1a537.png'; // Swiss cheese Plant
+import plant5 from '../assets/eb0351a5771ed55c7f3454bcce697dfe63237769.png'; // Sansevieria plant
+import plant6 from '../assets/444fba49a2674d2262c5455bcc501cb91b314490.png'; // Agave plant
 
 const plants = [
   {
     id: 1,
     image: plant1,
     name: 'Aglaonema plant',
-    description: 'The Aglaonema plant is a popular indoor plant known for its striking foliage and easy care requirements.',
+    description: 'The Aglaonema plant, commonly known as Chinese Evergreen known for its attractive foliage and ease of care',
     price: 'Rs. 300/-',
   },
   {
     id: 2,
     image: plant2,
     name: 'Plantain Lilies',
-    description: 'Hosta is a genus of plants commonly known as hostas, plantain lilies and occasionally by the Japanese name giboshi.',
+    description: 'Hostas are primarily grown for their lush, decorative leaves, which come in a wide variety of shapes, sizes,',
     price: 'Rs. 380/-',
   },
   {
     id: 3,
     image: plant3,
     name: 'Cactus',
-    description: 'A cactus is a member of the plant family Cactaceae, a family comprising about 127 genera with some 1750 known species.',
+    description: 'It is known for their ability to thrive in arid environments',
     price: 'Rs. 259/-',
   },
   {
     id: 4,
     image: plant4,
     name: 'Swiss cheese Plant',
-    description: 'Monstera deliciosa, the Swiss cheese plant, is a species of flowering plant native to tropical forests of southern Mexico.',
+    description: 'It is a popular tropical houseplant known for its distinctive, perforated leaves',
     price: 'Rs. 400/-',
   },
   {
     id: 5,
     image: plant5,
     name: 'Sansevieria plant',
-    description: 'Sansevieria is a historically recognized genus of flowering plants, native to Africa, Madagascar and southern Asia.',
+    description: 'It is a popular indoor plant admired for its striking appearance and low-maintenance nature.',
     price: 'Rs. 450/-',
   },
   {
     id: 6,
     image: plant6,
     name: 'Agave plant',
-    description: 'Agave is a genus of monocots native to the hot and arid regions of the Americas, although some species are also native.',
+    description: 'The Agave plant is a genus of succulent plants known for their striking rosette of thick, fleshy leaves and architectural forms.',
     price: 'Rs. 359/-',
   },
 ];
 
 const TopSellingPlants = () => {
   return (
-    <section id="shop" className="py-20 bg-[#0f1f10] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0f1f10] via-[#0b180c] to-[#0f1f10] pointer-events-none"></div>
-
+    <section 
+      id="shop" 
+      className="pt-32 pb-20 relative overflow-visible"
+      style={{ background: 'radial-gradient(circle at top, #142313 0%, #0c140a 70%, #070c06 100%)' }}
+    >
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         
-        {/* Section label box */}
-        <SectionTitle title="Our Top Selling plants" />
+        {/* Section Title with Custom Brackets */}
+        <div className="flex items-center justify-center mb-[85px]">
+          <h2 className="relative px-7 py-2.5 text-3xl sm:text-[40px] font-bold text-white tracking-[0.5px] leading-tight text-center select-none font-sans inline-block">
+            {/* Left Bracket */}
+            <span className="absolute left-0 top-0 bottom-0 w-[14px] border-l-2 border-t-2 border-b-2 border-[#D8B04C] rounded-l-[10px]"></span>
+            Our Top Selling Plants
+            {/* Right Bracket */}
+            <span className="absolute right-0 top-0 bottom-0 w-[14px] border-r-2 border-t-2 border-b-2 border-[#D8B04C] rounded-r-[10px]"></span>
+          </h2>
+        </div>
 
         {/* 3-column grid (stacks to 1 col on mobile, 2 col on sm/md) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[60px_40px]">
           {plants.map((plant) => (
             <PlantCard
               key={plant.id}
