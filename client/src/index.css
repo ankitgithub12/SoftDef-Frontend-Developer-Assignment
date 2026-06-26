@@ -16,6 +16,8 @@
   --color-flora-glass: rgba(26, 46, 26, 0.7);
   --color-flora-glass-border: rgba(74, 222, 128, 0.2);
 
+  --color-flora-gold: #e9f908;
+
   --font-poppins: "Poppins", sans-serif;
 }
 
@@ -60,22 +62,20 @@ body {
 .section-title-bracket {
   position: relative;
   display: inline-block;
-  font-weight: 600;
-  font-size: 1.75rem;
   color: var(--color-flora-text);
 }
 
 .section-title-bracket::before {
   content: "[";
   margin-right: 0.25rem;
-  color: var(--color-flora-accent);
+  color: var(--color-flora-gold);
   font-weight: 300;
 }
 
 .section-title-bracket::after {
   content: "]";
   margin-left: 0.25rem;
-  color: var(--color-flora-accent);
+  color: var(--color-flora-gold);
   font-weight: 300;
 }
 

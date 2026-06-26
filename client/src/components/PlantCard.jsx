@@ -1,15 +1,15 @@
 import React from 'react';
-import { Bookmark } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
 const PlantCard = ({ image, name, description, price }) => {
   return (
-    <article className="bg-[#1a2e1a] rounded-2xl p-5 border border-[#233b23] hover:border-[#4ade80]/30 transition-all duration-300 group flex flex-col justify-between shadow-md">
+    <article className="bg-[#1a2e1a]/30 backdrop-blur-md rounded-[35px] p-5 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-300 group flex flex-col justify-between shadow-lg hover:shadow-[#4ade80]/5">
       {/* Centered Image Area */}
-      <div className="flex items-center justify-center min-h-[180px] mb-4 bg-[#0f1f10]/30 rounded-xl p-4 overflow-hidden">
+      <div className="flex items-center justify-center min-h-[180px] mb-4 bg-[#0f1f10]/30 rounded-[25px] p-4 overflow-hidden relative">
         <img
           src={image}
           alt={name}
-          className="w-36 h-36 object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
+          className="w-36 h-36 object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)]"
         />
       </div>
 
@@ -22,20 +22,20 @@ const PlantCard = ({ image, name, description, price }) => {
           {description}
         </p>
 
-        {/* Price & Bookmark Row */}
+        {/* Price & ShoppingBag Row */}
         <div className="flex items-center justify-between pt-3 mt-1">
           <div>
             <span className="text-gray-400 text-xs tracking-wider uppercase font-semibold">Price</span>
-            <p className="text-[#4ade80] font-bold text-lg mt-0.5">
+            <p className="text-white font-extrabold text-lg mt-0.5">
               {price}
             </p>
           </div>
 
           <button
-            className="w-10 h-10 rounded-xl border border-[#233b23] hover:border-[#4ade80] flex items-center justify-center text-gray-300 hover:text-[#4ade80] hover:bg-[#1a2e1a] transition-all duration-300 cursor-pointer"
-            aria-label={`Bookmark ${name}`}
+            className="w-10 h-10 rounded-xl border border-white/30 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
+            aria-label={`Add ${name} to cart`}
           >
-            <Bookmark className="w-4.5 h-4.5" />
+            <ShoppingBag className="w-4.5 h-4.5" />
           </button>
         </div>
       </div>

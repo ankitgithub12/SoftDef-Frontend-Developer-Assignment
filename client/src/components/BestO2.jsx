@@ -13,16 +13,16 @@ const BestO2 = () => {
         {/* Section Heading */}
         <SectionTitle title="Our Best o2" />
 
-        {/* Full-width dark card */}
-        <div className="bg-[#1a2e1a] rounded-3xl overflow-hidden border border-[#233b23] hover:border-[#4ade80]/30 transition-all duration-500 shadow-xl group">
+        {/* Full-width glass card */}
+        <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] overflow-hidden border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 shadow-2xl group">
           <div className="flex flex-col lg:flex-row items-center p-8 sm:p-10 md:p-12 gap-8 lg:gap-12">
             
             {/* Left: Plant Image */}
-            <div className="w-full lg:w-1/2 flex justify-center bg-[#0f1f10]/30 rounded-2xl p-6 overflow-hidden">
+            <div className="w-full lg:w-1/2 flex justify-center bg-[#0f1f10]/30 rounded-[35px] p-6 overflow-hidden">
               <img
                 src={plantImg}
                 alt="Variegated Aglaonema plant in white pot"
-                className="w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
+                className="w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.3)]"
               />
             </div>
 
@@ -42,21 +42,21 @@ const BestO2 = () => {
               </div>
 
               {/* Bottom Actions Row */}
-              <div className="flex items-center justify-between pt-6 border-t border-[#233b23]">
-                <button className="border border-white hover:border-[#4ade80] hover:bg-[#4ade80] hover:text-black text-white font-bold px-8 py-3 rounded-xl text-sm transition-all duration-300 cursor-pointer uppercase tracking-wider">
+              <div className="flex items-center justify-between pt-6 border-t border-[#233b23]/50">
+                <button className="border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-bold px-8 py-3 rounded-2xl text-sm transition-all duration-300 cursor-pointer uppercase tracking-wider">
                   Explore
                 </button>
                 
                 {/* Navigation Arrows */}
                 <div className="flex items-center gap-3">
                   <button 
-                    className="w-10 h-10 rounded-xl border border-[#233b23] hover:border-[#4ade80] flex items-center justify-center text-gray-300 hover:text-[#4ade80] hover:bg-[#1a2e1a] transition-all duration-300 cursor-pointer"
+                    className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button 
-                    className="w-10 h-10 rounded-xl border border-[#233b23] hover:border-[#4ade80] flex items-center justify-center text-gray-300 hover:text-[#4ade80] hover:bg-[#1a2e1a] transition-all duration-300 cursor-pointer"
+                    className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
                     aria-label="Next slide"
                   >
                     <ChevronRight className="w-5 h-5" />
@@ -70,7 +70,7 @@ const BestO2 = () => {
         </div>
 
         {/* Pagination Dots */}
-        <div className="flex items-center justify-center gap-2 mt-8">
+        <div className="flex items-center justify-center gap-2.5 mt-8">
           <span className="w-2.5 h-2.5 rounded-full bg-[#4ade80] cursor-pointer"></span>
           <span className="w-2 h-2 rounded-full bg-[#233b23] hover:bg-[#4ade80]/50 transition-colors cursor-pointer"></span>
           <span className="w-2 h-2 rounded-full bg-[#233b23] hover:bg-[#4ade80]/50 transition-colors cursor-pointer"></span>

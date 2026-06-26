@@ -50,14 +50,14 @@ const Hero = () => {
                 <div className="w-12 h-12 rounded-full border border-white/30 group-hover:border-[#4ade80] flex items-center justify-center text-white group-hover:text-black group-hover:bg-[#4ade80] transition-all duration-300">
                   <Play className="w-4 h-4 fill-current ml-0.5" />
                 </div>
-                <span className="text-sm sm:text-base font-bold tracking-wider uppercase">
-                  Live Stream
+                <span className="text-sm sm:text-base font-bold tracking-wider">
+                  Live Demo...
                 </span>
               </button>
             </div>
 
             {/* Testimonial Box */}
-            <div className="bg-[#1a2e1a]/80 backdrop-blur-md p-5 border border-[#233b23]/50 rounded-2xl max-w-md shadow-xl transition-all hover:border-[#4ade80]/30">
+            <div className="bg-[#1a2e1a]/35 backdrop-blur-md p-6 border border-[#233b23]/50 rounded-[28px] max-w-sm shadow-2xl transition-all hover:border-[#4ade80]/30">
               <div className="flex items-center gap-3 mb-2.5">
                 <img
                   src={avatar1}
@@ -72,62 +72,63 @@ const Hero = () => {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className="w-3.5 h-3.5 text-[#4ade80] fill-[#4ade80]"
+                        className="w-3.5 h-3.5 text-[#e9f908] fill-[#e9f908]"
                       />
                     ))}
                   </div>
                 </div>
               </div>
               <p className="text-gray-300 font-sans text-xs sm:text-sm leading-relaxed font-normal">
-                "Best online plant shopping experience! The plants arrived healthy and beautiful, perfectly packed."
+                I can't express how thrilled I am with my new natural plants! They bring such a fresh and vibrant energy to my home.
               </p>
             </div>
           </div>
 
           {/* Right Plant Card Column */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up">
-            <div className="bg-[#1a2e1a] w-72 sm:w-80 p-5 border border-[#233b23]/80 rounded-3xl shadow-2xl relative group hover:border-[#4ade80]/40 transition-all duration-500">
+            <div className="bg-[#1a2e1a]/35 backdrop-blur-xl w-72 sm:w-80 p-6 border border-[#233b23]/50 rounded-[45px] shadow-2xl relative group hover:border-[#4ade80]/40 transition-all duration-500">
               {/* Plant Image Container */}
-              <div className="flex justify-center mb-5 bg-[#0f1f10]/40 rounded-2xl p-4 overflow-hidden">
+              <div className="flex justify-center mb-5 bg-[#0f1f10]/30 rounded-[30px] p-4 overflow-hidden">
                 <img
                   src={plantImg}
                   alt="Aglaonema plant"
-                  className="w-48 h-48 object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
+                  className="w-48 h-48 object-contain group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.3)]"
                 />
               </div>
 
               {/* Plant Details */}
               <div className="space-y-4 font-sans text-left">
                 <div>
-                  <span className="text-[#4ade80] text-xs font-semibold tracking-widest uppercase">
+                  <span className="text-gray-400 text-xs font-semibold tracking-wider">
                     Indoor Plant
                   </span>
                   <div className="flex items-center justify-between mt-1">
                     <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                       Aglaonema plant
                     </h3>
-                    <ChevronRight className="w-5 h-5 text-[#4ade80] group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
 
                 <a
                   href="#shop"
-                  className="w-full bg-white hover:bg-gray-100 text-black py-3 rounded-2xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center shadow-md cursor-pointer"
+                  className="w-full bg-[#1a2e1a]/40 hover:bg-white border border-white/35 text-white hover:text-black py-3 rounded-2xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center shadow-md cursor-pointer"
                 >
                   Buy Now
                 </a>
+
+                {/* Card Pagination Dots */}
+                <div className="flex items-center justify-center gap-1.5 pt-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer"></span>
+                  <span className="w-4 h-1.5 rounded-full bg-white cursor-pointer"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer"></span>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Pagination Dots */}
-        <div className="flex items-center justify-center gap-2.5 mt-16 lg:mt-24">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#4ade80] cursor-pointer"></span>
-          <span className="w-2 h-2 rounded-full bg-[#233b23] hover:bg-[#4ade80]/50 transition-colors cursor-pointer"></span>
-          <span className="w-2 h-2 rounded-full bg-[#233b23] hover:bg-[#4ade80]/50 transition-colors cursor-pointer"></span>
-        </div>
       </div>
     </section>
   );

@@ -44,7 +44,7 @@ const CustomerReview = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-[#1a2e1a] rounded-3xl p-6 border border-[#233b23] hover:border-[#4ade80]/30 transition-all duration-300 flex flex-col justify-between shadow-lg text-left"
+              className="bg-[#1a2e1a]/30 backdrop-blur-md rounded-[35px] p-6 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-300 flex flex-col justify-between shadow-lg text-left"
             >
               <div className="space-y-4">
                 {/* Header: Avatar, Name & Stars */}
@@ -68,7 +68,7 @@ const CustomerReview = () => {
                             key={i}
                             className={`w-3.5 h-3.5 ${
                               isFilled || isHalfStar
-                                ? 'text-[#4ade80] fill-[#4ade80]'
+                                ? 'text-[#e9f908] fill-[#e9f908]'
                                 : 'text-gray-600'
                             }`}
                           />

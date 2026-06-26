@@ -1,62 +1,70 @@
 import React from 'react';
-import { Bookmark } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import plant1 from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png';
 import plant2 from '../assets/444fba49a2674d2262c5455bcc501cb91b314490.png';
+import backgroundPlant from '../assets/fa0765984e44f85e1a04562f820f1492949a1257.jpg';
 
 const TrendyPlants = () => {
   return (
-    <section id="trending" className="py-20 bg-[#0f1f10] relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-[#4ade80]/5 rounded-full blur-[80px] pointer-events-none"></div>
+    <section id="trending" className="py-24 bg-[#0f1f10] relative overflow-hidden">
+      {/* Background decoration glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#4ade80]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        
+      {/* Giant Round Topiary Plant in Background/Center of this section */}
+      <div className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none opacity-20">
+        <img
+          src={backgroundPlant}
+          alt="Large round topiary plant background decoration"
+          className="w-[300px] sm:w-[480px] md:w-[650px] lg:w-[800px] h-auto object-contain mix-blend-lighten select-none pointer-events-none translate-y-10"
+        />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
         {/* Section Heading */}
-        <SectionTitle title="Our Trendy Plants" />
+        <SectionTitle title="Our Trendy plants" />
 
-        {/* Cards Container */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-12">
+        {/* Cards Stack */}
+        <div className="flex flex-col gap-24 mt-20">
           
-          {/* Card 1 (Left): Plant on left, Details on right */}
-          <div className="bg-[#1a2e1a] rounded-3xl p-6 sm:p-8 border border-[#233b23] hover:border-[#4ade80]/30 transition-all duration-350 group shadow-lg">
-            <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 h-full">
+          {/* Card 1: Plant on left, Details on right */}
+          <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] p-8 md:p-12 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 group shadow-2xl">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               
-              {/* Plant Image */}
-              <div className="w-full sm:w-1/2 flex justify-center bg-[#0f1f10]/30 rounded-2xl p-4 overflow-hidden">
+              {/* Plant Image container with overflow */}
+              <div className="w-full md:w-1/2 flex justify-center relative md:-mt-24 md:-mb-12 z-10">
                 <img
                   src={plant1}
-                  alt="Beige pot plant - For Your Desks Decorations"
-                  className="w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 object-contain group-hover:scale-105 transition-transform duration-500"
+                  alt="For Your Desks Decorations"
+                  className="w-56 h-56 sm:w-64 sm:h-64 md:w-[320px] md:h-[320px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform duration-500 select-none"
                 />
               </div>
 
               {/* Plant Details */}
-              <div className="w-full sm:w-1/2 flex flex-col justify-between h-full space-y-4 text-left font-sans">
-                <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+              <div className="w-full md:w-1/2 flex flex-col justify-center space-y-6 text-left font-sans z-20">
+                <div className="space-y-3">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
                     For Your Desks Decorations
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed font-normal">
-                    This miniature plant's leaves will add color, charm, and a fresh feel wherever you decide to place it.
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed font-normal">
+                    I recently added a beautiful desk decoration plant to my workspace, and it has made such a positive difference!
                   </p>
                 </div>
                 
-                <div className="space-y-4 pt-2">
+                <div className="space-y-4">
                   <div>
-                    <span className="text-gray-400 text-xs tracking-wider uppercase font-semibold">Price</span>
-                    <p className="text-white font-extrabold text-xl sm:text-2xl mt-0.5">Rs. 599/-</p>
+                    <p className="text-white font-extrabold text-2xl md:text-3xl">Rs. 599/-</p>
                   </div>
                   
-                  <div className="flex items-center gap-3">
-                    <button className="border border-white hover:border-[#4ade80] hover:bg-[#4ade80] hover:text-black text-white font-bold px-6 py-2.5 rounded-xl text-sm transition-all duration-300 cursor-pointer">
+                  <div className="flex items-center gap-4">
+                    <button className="border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-bold px-8 py-3 rounded-2xl text-sm transition-all duration-300 cursor-pointer">
                       Explore
                     </button>
                     <button 
-                      className="w-10 h-10 rounded-xl border border-[#233b23] hover:border-[#4ade80] flex items-center justify-center text-gray-300 hover:text-[#4ade80] hover:bg-[#1a2e1a] transition-all duration-300 cursor-pointer"
-                      aria-label="Bookmark plant"
+                      className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
+                      aria-label="Add to cart"
                     >
-                      <Bookmark className="w-4.5 h-4.5" />
+                      <ShoppingBag className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
@@ -65,48 +73,47 @@ const TrendyPlants = () => {
             </div>
           </div>
 
-          {/* Card 2 (Right): Details on left, Plant on right */}
-          <div className="bg-[#1a2e1a] rounded-3xl p-6 sm:p-8 border border-[#233b23] hover:border-[#4ade80]/30 transition-all duration-350 group shadow-lg">
-            <div className="flex flex-col sm:flex-row-reverse items-center gap-6 sm:gap-8 h-full">
+          {/* Card 2: Details on left, Plant on right */}
+          <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] p-8 md:p-12 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 group shadow-2xl">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               
-              {/* Plant Image */}
-              <div className="w-full sm:w-1/2 flex justify-center bg-[#0f1f10]/30 rounded-2xl p-4 overflow-hidden">
-                <img
-                  src={plant2}
-                  alt="Succulent in blue pot - For Your Desks Decorations"
-                  className="w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-
               {/* Plant Details */}
-              <div className="w-full sm:w-1/2 flex flex-col justify-between h-full space-y-4 text-left font-sans">
-                <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+              <div className="w-full md:w-1/2 flex flex-col justify-center space-y-6 text-left font-sans order-2 md:order-1 z-20">
+                <div className="space-y-3">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
                     For Your Desks Decorations
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed font-normal">
-                    This miniature succulent's leaves will add color, charm, and a fresh feel wherever you decide to place it.
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed font-normal">
+                    The greenery adds a touch of nature and serenity to my desk, making it feel more inviting and calming.
                   </p>
                 </div>
                 
-                <div className="space-y-4 pt-2">
+                <div className="space-y-4">
                   <div>
-                    <span className="text-gray-400 text-xs tracking-wider uppercase font-semibold">Price</span>
-                    <p className="text-white font-extrabold text-xl sm:text-2xl mt-0.5">Rs. 399/-</p>
+                    <p className="text-white font-extrabold text-2xl md:text-3xl">Rs. 399/-</p>
                   </div>
                   
-                  <div className="flex items-center gap-3">
-                    <button className="border border-white hover:border-[#4ade80] hover:bg-[#4ade80] hover:text-black text-white font-bold px-6 py-2.5 rounded-xl text-sm transition-all duration-300 cursor-pointer">
+                  <div className="flex items-center gap-4">
+                    <button className="border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-bold px-8 py-3 rounded-2xl text-sm transition-all duration-300 cursor-pointer">
                       Explore
                     </button>
                     <button 
-                      className="w-10 h-10 rounded-xl border border-[#233b23] hover:border-[#4ade80] flex items-center justify-center text-gray-300 hover:text-[#4ade80] hover:bg-[#1a2e1a] transition-all duration-300 cursor-pointer"
-                      aria-label="Bookmark plant"
+                      className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
+                      aria-label="Add to cart"
                     >
-                      <Bookmark className="w-4.5 h-4.5" />
+                      <ShoppingBag className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
+              </div>
+
+              {/* Plant Image container with overflow */}
+              <div className="w-full md:w-1/2 flex justify-center relative md:-mt-24 md:-mb-12 order-1 md:order-2 z-10">
+                <img
+                  src={plant2}
+                  alt="For Your Desks Decorations"
+                  className="w-56 h-56 sm:w-64 sm:h-64 md:w-[320px] md:h-[320px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform duration-500 select-none"
+                />
               </div>
 
             </div>
