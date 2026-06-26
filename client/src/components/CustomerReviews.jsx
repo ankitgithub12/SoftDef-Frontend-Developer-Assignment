@@ -9,39 +9,39 @@ import avatar3 from '../assets/avatar-3.png';
 const reviews = [
   {
     id: 1,
-    name: 'Steffy Susan',
+    name: 'Shelly Runse',
     avatar: avatar1,
     rating: 5,
     review:
-      'Absolutely love my new Aglaonema! The quality is amazing, and it arrived perfectly packaged. My desk has never looked better. FloraVision is my go-to for indoor plants!',
+      'Good service for the customer. Agent very friendly and fast response. Recomended seller...',
   },
   {
     id: 2,
-    name: 'Luka Sarfan',
+    name: 'Lula Rolfson',
     avatar: avatar2,
     rating: 5,
     review:
-      'Great selection and fast delivery. The snake plant I ordered is thriving beautifully. The customer service team was also very helpful with care tips. Highly recommend!',
+      'Good service for the customer. Agent very friendly and fast response. Recomended seller...',
   },
   {
     id: 3,
-    name: 'Dora Harsh',
+    name: 'Carol Runis',
     avatar: avatar3,
-    rating: 4,
+    rating: 5,
     review:
-      'Beautiful plants at great prices! I ordered a collection for my living room and every single one arrived healthy and vibrant. Will definitely be ordering more soon.',
+      'Good service for the customer. Agent very friendly and fast response. Recomended seller...',
   },
 ];
 
 const CustomerReviews = () => {
   return (
-    <section className="py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-flora-bg via-flora-bg-light/30 to-flora-bg"></div>
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-flora-bg pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Customer Review" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
           {reviews.map((review) => (
             <TestimonialCard
               key={review.id}

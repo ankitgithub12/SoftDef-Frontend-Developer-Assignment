@@ -1,82 +1,79 @@
 import React from 'react';
-import { ShoppingCart, ArrowRight } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import SectionTitle from './SectionTitle';
-import Button from './Button';
 import trendingPlant1 from '../assets/trending-plant-1.png';
 import trendingPlant2 from '../assets/trending-plant-2.png';
 
 const TrendingPlants = () => {
   return (
-    <section id="trending" className="py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-flora-bg via-flora-bg-light/50 to-flora-bg"></div>
+    <section id="trending" className="py-16 md:py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-flora-bg pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Our Trendy plants" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mt-8">
-          {/* Card 1 — Large plant with right-aligned text */}
-          <div className="glass-card overflow-hidden plant-card-hover group">
-            <div className="flex flex-col sm:flex-row items-center">
-              <div className="w-full sm:w-1/2 p-4">
+        <div className="flex flex-col gap-10 md:gap-14 max-w-5xl mx-auto mt-12">
+          {/* Card 1 — Plant on left, text on right (Shifted Right) */}
+          <div className="glass-card max-w-3xl w-full self-end rounded-3xl overflow-hidden border border-flora-border/50 bg-[#1A2E23]/60 backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group">
+            <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-8">
+              <div className="w-full md:w-1/2 flex justify-center">
                 <img
                   src={trendingPlant1}
-                  alt="Trending indoor foliage plant in a green ceramic pot"
-                  className="w-full h-48 sm:h-64 object-contain group-hover:scale-105 transition-transform duration-500"
+                  alt="Beige pot plant - desk decoration"
+                  className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="w-full sm:w-1/2 p-5 sm:p-6 space-y-3">
-                <h3 className="text-lg sm:text-xl font-semibold text-flora-text">
+              <div className="w-full md:w-1/2 space-y-4 text-left">
+                <h3 className="text-xl sm:text-2xl font-bold text-flora-text tracking-tight">
                   For Your Desks Decorations
                 </h3>
-                <p className="text-flora-text-secondary text-xs sm:text-sm leading-relaxed">
-                  Transform your workspace with beautiful, air-purifying desk
-                  plants that bring life and freshness to your environment.
+                <p className="text-flora-text-secondary text-sm leading-relaxed">
+                  The Aglaonema plant is a popular indoor plant known for its striking leaves
                 </p>
-                <p className="text-flora-accent font-bold text-lg">Rs. 500/-</p>
-                <div className="flex items-center gap-3 pt-2">
-                  <Button variant="primary" className="text-xs px-4 py-2">
+                <div className="space-y-1">
+                  <span className="text-flora-text-secondary text-xs tracking-wider uppercase opacity-75">Price</span>
+                  <p className="text-flora-accent font-bold text-xl">Rs. 250/-</p>
+                </div>
+                <div className="flex items-center gap-4 pt-2">
+                  <button className="bg-flora-accent hover:bg-flora-accent-light text-[#0A1F12] font-semibold px-6 py-2.5 rounded-xl text-sm transition-all duration-300 hover:shadow-lg hover:shadow-flora-accent/20 cursor-pointer">
                     Explore
-                  </Button>
-                  <Button
-                    variant="icon"
-                    ariaLabel="Add to cart"
-                    icon={<ShoppingCart className="w-4 h-4" />}
-                    className="!w-9 !h-9"
-                  />
+                  </button>
+                  <button className="w-10 h-10 rounded-xl border border-flora-text/40 hover:border-flora-accent flex items-center justify-center text-flora-text hover:text-flora-accent transition-all duration-300 cursor-pointer">
+                    <ShoppingBag className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 2 — Text on left, plant on right */}
-          <div className="glass-card overflow-hidden plant-card-hover group">
-            <div className="flex flex-col sm:flex-row-reverse items-center">
-              <div className="w-full sm:w-1/2 p-4">
+          {/* Card 2 — Text on left, plant on right (Shifted Left) */}
+          <div className="glass-card max-w-3xl w-full self-start rounded-3xl overflow-hidden border border-flora-border/50 bg-[#1A2E23]/60 backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group">
+            <div className="flex flex-col md:flex-row-reverse items-center p-6 md:p-8 gap-6 md:gap-8">
+              <div className="w-full md:w-1/2 flex justify-center">
                 <img
                   src={trendingPlant2}
-                  alt="Trending succulent plant in a mint turquoise pot"
-                  className="w-full h-48 sm:h-64 object-contain group-hover:scale-105 transition-transform duration-500"
+                  alt="Mint pot plant - desk decoration"
+                  className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="w-full sm:w-1/2 p-5 sm:p-6 space-y-3">
-                <h3 className="text-lg sm:text-xl font-semibold text-flora-text">
+              <div className="w-full md:w-1/2 space-y-4 text-left">
+                <h3 className="text-xl sm:text-2xl font-bold text-flora-text tracking-tight">
                   For Your Desks Decorations
                 </h3>
-                <p className="text-flora-text-secondary text-xs sm:text-sm leading-relaxed">
-                  Handpicked collection of desk-friendly plants, perfect for
-                  adding a touch of nature to your daily routine.
+                <p className="text-flora-text-secondary text-sm leading-relaxed">
+                  The Aglaonema plant is a popular indoor plant known for its striking leaves
                 </p>
-                <p className="text-flora-accent font-bold text-lg">Rs. 200/-</p>
-                <div className="flex items-center gap-3 pt-2">
-                  <Button variant="outline" className="text-xs px-4 py-2">
+                <div className="space-y-1">
+                  <span className="text-flora-text-secondary text-xs tracking-wider uppercase opacity-75">Price</span>
+                  <p className="text-flora-accent font-bold text-xl">Rs. 300/-</p>
+                </div>
+                <div className="flex items-center gap-4 pt-2">
+                  <button className="bg-flora-accent hover:bg-flora-accent-light text-[#0A1F12] font-semibold px-6 py-2.5 rounded-xl text-sm transition-all duration-300 hover:shadow-lg hover:shadow-flora-accent/20 cursor-pointer">
                     Explore
-                  </Button>
-                  <Button
-                    variant="icon"
-                    ariaLabel="View details"
-                    icon={<ArrowRight className="w-4 h-4" />}
-                    className="!w-9 !h-9"
-                  />
+                  </button>
+                  <button className="w-10 h-10 rounded-xl border border-flora-text/40 hover:border-flora-accent flex items-center justify-center text-flora-text hover:text-flora-accent transition-all duration-300 cursor-pointer">
+                    <ShoppingBag className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>

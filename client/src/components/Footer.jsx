@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { Leaf, Send, MapPin, Phone, Mail } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Shop', href: '#shop' },
-  { label: 'Plant Care', href: '#plant-care' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Plants Type', href: '#trending' },
+  { label: 'More', href: '#shop' },
   { label: 'Contact', href: '#contact' },
-  { label: 'FAQs', href: '#faqs' },
 ];
 
-/* Inline SVG social icons (lucide-react doesn't export brand icons) */
+/* Inline SVG social icons */
 const FacebookIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -29,17 +27,10 @@ const InstagramIcon = ({ className }) => (
   </svg>
 );
 
-const YoutubeIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-  </svg>
-);
-
 const socialLinks = [
   { icon: FacebookIcon, label: 'Facebook', href: '#' },
   { icon: TwitterIcon, label: 'Twitter', href: '#' },
   { icon: InstagramIcon, label: 'Instagram', href: '#' },
-  { icon: YoutubeIcon, label: 'Youtube', href: '#' },
 ];
 
 const Footer = () => {
@@ -53,51 +44,48 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-flora-bg-light border-t border-flora-border/50 pt-12 md:pt-16 pb-6">
+    <footer className="relative bg-flora-bg-light border-t border-flora-border/50 pt-16 pb-8 text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 pb-10 md:pb-12 border-b border-flora-border/50">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 pb-12 border-b border-flora-border/30">
           {/* Brand Column */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <a href="#home" className="flex items-center gap-2 group">
               <div className="w-8 h-8 rounded-lg bg-flora-accent/20 flex items-center justify-center group-hover:bg-flora-accent/30 transition-colors duration-300">
                 <Leaf className="w-5 h-5 text-flora-accent" />
               </div>
               <span className="text-lg font-semibold text-flora-text tracking-tight">
-                Flora<span className="text-flora-accent">Vision</span>
+                FloraVision<span className="text-flora-accent">.</span>
               </span>
             </a>
             <p className="text-flora-text-secondary text-sm leading-relaxed max-w-xs">
-              The best online plant store for all your indoor gardening needs.
-              We provide healthy, beautiful plants delivered right to your
-              doorstep with care and love.
+              "There is also a clear, green, fresh aroma; and since flower heads are not typically..."
             </p>
-            <div className="space-y-2 pt-2">
-              <div className="flex items-center gap-2 text-flora-text-muted text-xs sm:text-sm">
-                <MapPin className="w-4 h-4 text-flora-accent flex-shrink-0" />
-                <span>123 Green Street, Nature City</span>
-              </div>
-              <div className="flex items-center gap-2 text-flora-text-muted text-xs sm:text-sm">
-                <Phone className="w-4 h-4 text-flora-accent flex-shrink-0" />
-                <span>+91 98765 43210</span>
-              </div>
-              <div className="flex items-center gap-2 text-flora-text-muted text-xs sm:text-sm">
-                <Mail className="w-4 h-4 text-flora-accent flex-shrink-0" />
-                <span>hello@floravision.com</span>
-              </div>
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 pt-2">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="w-9 h-9 rounded-full bg-flora-card hover:bg-flora-accent/20 flex items-center justify-center text-flora-text-secondary hover:text-flora-accent transition-all duration-300 border border-flora-border/50 hover:border-flora-accent/30"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-4.5 h-4.5" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-flora-text font-semibold text-base mb-4">
+          <div className="space-y-4">
+            <h4 className="text-flora-text font-bold text-base tracking-wide">
               Quick Links
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-flora-text-secondary hover:text-flora-accent text-sm transition-colors duration-300 hover:pl-1"
+                    className="text-flora-text-secondary hover:text-flora-accent text-sm transition-colors duration-300 font-medium"
                   >
                     {link.label}
                   </a>
@@ -107,57 +95,39 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div>
-            <h4 className="text-flora-text font-semibold text-base mb-4">
+          <div className="space-y-4">
+            <h4 className="text-flora-text font-bold text-base tracking-wide">
               For Every Update
             </h4>
-            <p className="text-flora-text-secondary text-sm mb-4 leading-relaxed">
-              Subscribe to our newsletter and stay updated with the latest plant
-              collections, tips, and offers.
-            </p>
             <form
               onSubmit={handleSubscribe}
-              className="flex items-stretch gap-0"
+              className="flex items-stretch gap-2 max-w-sm mt-2"
             >
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 bg-flora-card border border-flora-border rounded-l-lg px-4 py-2.5 text-sm text-flora-text placeholder:text-flora-text-muted focus:outline-none focus:border-flora-accent transition-colors duration-300"
+                placeholder="Enter Email"
+                className="flex-1 bg-flora-card border border-flora-border rounded-xl px-4 py-2.5 text-sm text-flora-text placeholder:text-flora-text-muted focus:outline-none focus:border-flora-accent transition-all duration-300"
                 aria-label="Email for newsletter"
                 required
               />
               <button
                 type="submit"
-                className="bg-flora-accent hover:bg-flora-accent-light text-white px-4 rounded-r-lg transition-colors duration-300 flex items-center justify-center cursor-pointer"
+                className="bg-flora-accent hover:bg-flora-accent-light text-[#0A1F12] font-semibold px-6 rounded-xl text-sm transition-colors duration-300 flex items-center justify-center cursor-pointer"
                 aria-label="Subscribe to newsletter"
               >
-                <Send className="w-4 h-4" />
+                Subscribe
               </button>
             </form>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
-          {/* Social Icons */}
-          <div className="flex items-center gap-3">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                className="w-9 h-9 rounded-full bg-flora-card hover:bg-flora-accent/20 flex items-center justify-center text-flora-text-muted hover:text-flora-accent transition-all duration-300 border border-flora-border/50 hover:border-flora-accent/30"
-                aria-label={social.label}
-              >
-                <social.icon className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-
+        <div className="pt-6">
           {/* Copyright */}
-          <p className="text-flora-text-muted text-xs sm:text-sm">
-            © 2024 FloraVision. All rights reserved.
+          <p className="text-flora-text-secondary text-sm text-center">
+            FloraVision @ all right reserved
           </p>
         </div>
       </div>
@@ -166,3 +136,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

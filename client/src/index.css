@@ -8,8 +8,8 @@
   --color-flora-card-hover: #213A2C;
   --color-flora-primary: #2D5A3D;
   --color-flora-primary-light: #3A7D52;
-  --color-flora-accent: #4CAF50;
-  --color-flora-accent-light: #5CB85C;
+  --color-flora-accent: #E5B842;
+  --color-flora-accent-light: #F3C655;
   --color-flora-text: #FFFFFF;
   --color-flora-text-secondary: #A8C5B0;
   --color-flora-text-muted: #6B8F75;
@@ -67,14 +67,14 @@ body {
 }
 
 .section-title-bracket::before {
-  content: "{";
+  content: "[";
   margin-right: 0.25rem;
   color: var(--color-flora-accent);
   font-weight: 300;
 }
 
 .section-title-bracket::after {
-  content: "}";
+  content: "]";
   margin-left: 0.25rem;
   color: var(--color-flora-accent);
   font-weight: 300;

@@ -3,9 +3,8 @@ import { Search, ShoppingCart, User, Menu, X, Leaf } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'Shop', href: '#shop' },
-  { label: 'Plant Care', href: '#plant-care' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Plants Type', href: '#trending' },
+  { label: 'More', href: '#shop' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -34,7 +33,7 @@ const Navbar = () => {
               <Leaf className="w-5 h-5 text-flora-accent" />
             </div>
             <span className="text-lg font-semibold text-flora-text tracking-tight">
-              Flora<span className="text-flora-accent">Vision</span>
+              FloraVision<span className="text-flora-accent">.</span>
             </span>
           </a>
 

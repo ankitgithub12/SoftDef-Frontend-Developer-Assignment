@@ -14,7 +14,7 @@ const Button = ({
 
   const variants = {
     primary:
-      'bg-flora-accent hover:bg-flora-accent-light text-white px-6 py-2.5 rounded-lg text-sm shadow-md hover:shadow-lg hover:shadow-flora-accent/20 active:scale-95',
+      'bg-flora-accent hover:bg-flora-accent-light text-[#0A1F12] px-6 py-2.5 rounded-lg text-sm shadow-md hover:shadow-lg hover:shadow-flora-accent/20 active:scale-95',
     outline:
       'border border-flora-text-secondary text-flora-text-secondary hover:border-flora-accent hover:text-flora-accent px-6 py-2.5 rounded-lg text-sm active:scale-95',
     icon: 'w-10 h-10 rounded-lg bg-flora-card hover:bg-flora-card-hover text-flora-text-secondary hover:text-flora-accent border border-flora-border hover:border-flora-accent active:scale-95',

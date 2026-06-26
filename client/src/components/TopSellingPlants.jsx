@@ -15,66 +15,60 @@ const plants = [
     image: plant1,
     name: 'Aglaonema plant',
     description:
-      'A beautiful indoor plant with lush green variegated leaves, perfect for desk and home decoration.',
+      'The Aglaonema plant is a popular indoor plant known for its striking foliage and easy care requirements.',
     price: 'Rs. 300/-',
-    rating: 5,
   },
   {
     id: 2,
     image: plant2,
-    name: 'Mountain rose',
+    name: 'Plantain Lily',
     description:
-      'Compact and elegant succulent, ideal for small spaces and adding a touch of natural beauty.',
-    price: 'Rs. 200/-',
-    rating: 4,
+      'Hosta is a genus of plants commonly known as hostas, plantain lilies and occasionally...',
+    price: 'Rs. 350/-',
   },
   {
     id: 3,
     image: plant3,
     name: 'Cactus',
     description:
-      'Low-maintenance desert plant in a vibrant pot, perfect for sunny spots and modern decor.',
+      'A cactus is a member of the plant family Cactaceae, a family comprising about...',
     price: 'Rs. 150/-',
-    rating: 4,
   },
   {
     id: 4,
     image: plant4,
-    name: 'Snake plant',
+    name: 'Swiss cheese Plant',
     description:
-      'Air-purifying powerhouse with tall, striking leaves — thrives in any lighting condition.',
+      'Monstera deliciosa, the Swiss cheese plant, is a species of flowering plant...',
     price: 'Rs. 400/-',
-    rating: 5,
   },
   {
     id: 5,
     image: plant5,
-    name: 'Samaveria plant',
+    name: 'Sansevieria plant',
     description:
-      'Hardy and stylish, this sansevieria variety adds a modern touch to any room.',
-    price: 'Rs. 350/-',
-    rating: 4,
+      'Sansevieria is a historically recognized genus of flowering plants, native to Africa...',
+    price: 'Rs. 450/-',
   },
   {
     id: 6,
     image: plant6,
     name: 'Agave plant',
     description:
-      'Bold and architectural succulent with thick, sculptural leaves for statement decor.',
-    price: 'Rs. 250/-',
-    rating: 4,
+      'Agave is a genus of monocots native to the hot and arid regions of the Americas...',
+    price: 'Rs. 350/-',
   },
 ];
 
 const TopSellingPlants = () => {
   return (
-    <section id="shop" className="py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-flora-bg via-flora-bg-light/30 to-flora-bg"></div>
+    <section id="shop" className="py-16 md:py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-flora-bg pointer-events-none"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Our Top Selling Plants" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
           {plants.map((plant) => (
             <PlantCard
               key={plant.id}
@@ -82,7 +76,6 @@ const TopSellingPlants = () => {
               name={plant.name}
               description={plant.description}
               price={plant.price}
-              rating={plant.rating}
             />
           ))}
         </div>

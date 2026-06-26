@@ -1,59 +1,41 @@
 import React from 'react';
-import { Heart, ShoppingCart, Star } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
-const PlantCard = ({ image, name, description, price, rating = 4.5 }) => {
+const PlantCard = ({ image, name, description, price }) => {
   return (
-    <article className="glass-card overflow-hidden plant-card-hover group flex flex-col">
+    <article className="glass-card overflow-hidden border border-flora-border/40 bg-[#1A2E23]/60 backdrop-blur-md rounded-3xl transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group flex flex-col p-5">
       {/* Image Area */}
-      <div className="relative bg-flora-bg-light/50 p-4 sm:p-6 flex items-center justify-center min-h-[180px] sm:min-h-[220px]">
+      <div className="flex items-center justify-center min-h-[160px] sm:min-h-[200px] mb-4">
         <img
           src={image}
           alt={`${name} — indoor plant`}
-          className="w-32 sm:w-40 md:w-44 h-32 sm:h-40 md:h-44 object-contain group-hover:scale-110 transition-transform duration-500"
+          className="w-32 sm:w-40 md:w-44 h-32 sm:h-40 md:h-44 object-contain group-hover:scale-105 transition-transform duration-500"
         />
-        {/* Wishlist button */}
-        <button
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-flora-card/80 flex items-center justify-center text-flora-text-muted hover:text-red-400 hover:bg-flora-card transition-all duration-300 cursor-pointer"
-          aria-label={`Add ${name} to wishlist`}
-        >
-          <Heart className="w-4 h-4" />
-        </button>
       </div>
 
       {/* Info Area */}
-      <div className="p-4 sm:p-5 flex flex-col flex-1">
-        <h3 className="text-sm sm:text-base font-semibold text-flora-text truncate">
+      <div className="flex flex-col flex-1 space-y-2 text-left">
+        <h3 className="text-lg font-bold text-flora-text tracking-tight">
           {name}
         </h3>
-        <p className="text-flora-text-muted text-xs sm:text-sm mt-1 line-clamp-2 leading-relaxed flex-1">
+        <p className="text-flora-text-secondary text-sm leading-relaxed line-clamp-3 flex-1">
           {description}
         </p>
 
         {/* Price & Actions Row */}
-        <div className="flex items-center justify-between mt-3 pt-3 border-t border-flora-border/50">
+        <div className="flex items-center justify-between pt-3 mt-2">
           <div>
-            <p className="text-flora-accent font-bold text-sm sm:text-base">
+            <span className="text-flora-text-secondary text-[11px] tracking-wider uppercase opacity-75">Price</span>
+            <p className="text-flora-accent font-bold text-lg">
               {price}
             </p>
-            <div className="flex items-center gap-0.5 mt-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className={`w-3 h-3 ${
-                    i < Math.floor(rating)
-                      ? 'text-yellow-400 fill-yellow-400'
-                      : 'text-flora-text-muted'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
           <button
-            className="w-9 h-9 rounded-lg bg-flora-accent/10 hover:bg-flora-accent/20 flex items-center justify-center text-flora-accent transition-all duration-300 cursor-pointer"
+            className="w-10 h-10 rounded-xl border border-flora-text/30 hover:border-flora-accent flex items-center justify-center text-flora-text hover:text-flora-accent transition-all duration-300 cursor-pointer"
             aria-label={`Add ${name} to cart`}
           >
-            <ShoppingCart className="w-4 h-4" />
+            <ShoppingBag className="w-4.5 h-4.5" />
           </button>
         </div>
       </div>
@@ -62,3 +44,4 @@ const PlantCard = ({ image, name, description, price, rating = 4.5 }) => {
 };
 
 export default PlantCard;
+
