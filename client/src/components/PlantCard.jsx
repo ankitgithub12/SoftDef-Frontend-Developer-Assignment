@@ -23,7 +23,7 @@ const PlantCard = ({ image, name, description, price }) => {
       <img
         src={image}
         alt={name}
-        className="absolute top-[-70px] left-1/2 -translate-x-1/2 w-[190px] h-[190px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none"
+        className="absolute top-[-35px] left-1/2 -translate-x-1/2 w-[190px] h-[190px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none"
       />
 
       {/* Info Area (Grouped at the bottom to match Figma spacing) */}
