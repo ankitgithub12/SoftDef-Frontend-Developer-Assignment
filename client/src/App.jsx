@@ -15,11 +15,11 @@ function App() {
       <main>
         <div className="relative">
           {/* Giant shared background topiary plant spanning Hero & TrendyPlants */}
-          <div className="absolute top-[80px] left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] md:w-[750px] lg:w-[950px] pointer-events-none z-0 flex justify-center">
+          <div className="absolute top-[-20px] sm:top-[-30px] md:top-[-40px] left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] md:w-[750px] lg:w-[950px] pointer-events-none z-0 flex justify-center">
             <img
               src={backgroundPlant}
               alt="Large round topiary plant background decoration"
-              className="w-full h-auto object-contain opacity-85 mix-blend-lighten select-none pointer-events-none"
+              className="w-full h-auto object-contain opacity-100 mix-blend-lighten select-none pointer-events-none"
             />
           </div>
           <Hero />

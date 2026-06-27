@@ -46,7 +46,7 @@ const Hero = () => {
             </div>
 
             {/* Testimonial Box */}
-            <div className="bg-[#1c2919]/72 backdrop-blur-xl p-6 border border-white/8 rounded-[28px] max-w-sm shadow-2xl transition-all duration-300 hover:border-white/15 hover:bg-[#203020]/80">
+            <div className="bg-white/[0.03] backdrop-blur-xl p-6 border border-white/[0.08] rounded-[40px] max-w-sm shadow-2xl transition-all duration-300 hover:border-white/15 hover:bg-white/[0.06]">
               <div className="flex items-center gap-3 mb-2.5">
                 <img
                   src={avatar1}
@@ -82,12 +82,20 @@ const Hero = () => {
                 viewBox="0 0 350 450"
                 preserveAspectRatio="none"
               >
+                <defs>
+                  <clipPath id="hero-wavy-clip">
+                    <path d="M 0,80 C 0,55 15,40 40,40 C 90,40 120,65 160,65 C 210,65 260,20 310,20 C 335,20 350,35 350,60 L 350,410 C 350,432 328,450 310,450 L 40,450 C 22,450 0,432 0,410 Z" />
+                  </clipPath>
+                </defs>
+                <foreignObject clipPath="url(#hero-wavy-clip)" width="350" height="450" className="w-full h-full">
+                  <div className="w-full h-full backdrop-blur-xl bg-white/[0.03] transition-all duration-500 group-hover:bg-white/[0.06]" />
+                </foreignObject>
                 <path
-                  d="M 0,80 C 0,55 15,40 40,40 C 90,40 120,65 160,65 C 210,65 260,20 310,20 C 335,20 350,35 350,60 L 350,422 C 350,438 338,450 322,450 L 28,450 C 12,450 0,438 0,422 Z"
-                  fill="rgba(28, 41, 25, 0.72)"
+                  d="M 0,80 C 0,55 15,40 40,40 C 90,40 120,65 160,65 C 210,65 260,20 310,20 C 335,20 350,35 350,60 L 350,410 C 350,432 328,450 310,450 L 40,450 C 22,450 0,432 0,410 Z"
+                  fill="none"
                   stroke="rgba(255, 255, 255, 0.08)"
                   strokeWidth="1.5"
-                  className="transition-all duration-500 group-hover:stroke-white/15 group-hover:fill-[rgba(32,48,29,0.85)]"
+                  className="transition-all duration-500 group-hover:stroke-white/15"
                 />
               </svg>
 

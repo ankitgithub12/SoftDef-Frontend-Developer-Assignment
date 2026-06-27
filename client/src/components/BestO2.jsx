@@ -14,7 +14,7 @@ const BestO2 = () => {
         <SectionTitle title="Our Best o2" />
 
         {/* Full-width glass card */}
-        <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] overflow-visible border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 shadow-2xl group">
+        <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] overflow-visible border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 shadow-2xl group">
           <div className="flex flex-col lg:flex-row items-center p-8 sm:p-10 md:p-12 gap-8 lg:gap-12">
             
             {/* Left: Plant Image */}

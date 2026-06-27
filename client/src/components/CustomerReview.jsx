@@ -44,7 +44,7 @@ const CustomerReview = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-[#1a2e1a]/30 backdrop-blur-md rounded-[35px] p-6 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-300 flex flex-col justify-between shadow-lg text-left"
+              className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] p-6 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 flex flex-col justify-between shadow-lg text-left"
             >
               <div className="space-y-4">
                 {/* Header: Avatar, Name & Stars */}

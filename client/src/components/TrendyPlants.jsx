@@ -18,7 +18,7 @@ const TrendyPlants = () => {
         <div className="flex flex-col gap-24 mt-20">
           
           {/* Card 1: Plant on left, Details on right */}
-          <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] p-8 md:p-12 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 group shadow-2xl">
+          <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 md:p-12 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 group shadow-2xl">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               
               {/* Plant Image container with overflow */}
@@ -64,7 +64,7 @@ const TrendyPlants = () => {
           </div>
 
           {/* Card 2: Details on left, Plant on right */}
-          <div className="bg-[#1a2e1a]/30 backdrop-blur-xl rounded-[50px] md:rounded-[70px] p-8 md:p-12 border border-[#233b23]/50 hover:border-[#4ade80]/30 transition-all duration-500 group shadow-2xl">
+          <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 md:p-12 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 group shadow-2xl">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               
               {/* Plant Details */}

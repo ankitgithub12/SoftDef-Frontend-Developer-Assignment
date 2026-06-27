@@ -3,7 +3,7 @@ import { Star } from 'lucide-react';
 
 const TestimonialCard = ({ name, avatar, rating = 5, review }) => {
   return (
-    <article className="glass-card p-6 border border-flora-border/50 bg-[#1A2E23]/60 backdrop-blur-md rounded-3xl transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group relative overflow-hidden flex flex-col justify-between">
+    <article className="glass-card p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group relative overflow-hidden flex flex-col justify-between">
       <div>
         {/* Avatar & Name */}
         <div className="flex items-center gap-3 mb-4">
