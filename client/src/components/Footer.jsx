@@ -61,7 +61,7 @@ const Footer = () => {
     <footer id="contact" className="relative bg-[#0b180c] border-t border-[#233b23] pt-16 pb-8 text-left font-sans">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 pb-12 border-b border-[#233b23]/50">
-          
+
           {/* Logo and Tagline */}
           <div className="space-y-6">
             <a href="#home" className="flex items-center gap-2 group">
@@ -73,7 +73,7 @@ const Footer = () => {
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm font-normal">
               From lush indoor greens to vibrant outdoor blooms, our plants are crafted to refresh and elevate your living environment.
             </p>
-            
+
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
               <a

@@ -15,7 +15,7 @@ const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Content Column */}
           <div className="lg:col-span-7 space-y-8 md:space-y-10 text-left animate-fade-in-up">
             <div className="space-y-4 md:space-y-6">

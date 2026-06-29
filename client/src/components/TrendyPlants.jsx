@@ -16,11 +16,11 @@ const TrendyPlants = () => {
 
         {/* Cards Stack */}
         <div className="flex flex-col gap-24 mt-20">
-          
+
           {/* Card 1: Plant on left, Details on right */}
           <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 md:p-12 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 group shadow-2xl">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              
+
               {/* Plant Image container with overflow */}
               <div className="w-full md:w-1/2 flex justify-center relative md:-mt-24 md:-mb-12 z-10">
                 <img
@@ -40,17 +40,17 @@ const TrendyPlants = () => {
                     I recently added a beautiful desk decoration plant to my workspace, and it has made such a positive difference!
                   </p>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div>
                     <p className="text-white font-extrabold text-2xl md:text-3xl">Rs. 599/-</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <button className="border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-bold px-8 py-3 rounded-2xl text-sm transition-all duration-300 cursor-pointer">
                       Explore
                     </button>
-                    <button 
+                    <button
                       className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
                       aria-label="Add to cart"
                     >
@@ -66,7 +66,7 @@ const TrendyPlants = () => {
           {/* Card 2: Details on left, Plant on right */}
           <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] p-8 md:p-12 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 group shadow-2xl">
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              
+
               {/* Plant Details */}
               <div className="w-full md:w-1/2 flex flex-col justify-center space-y-6 text-left font-sans order-2 md:order-1 z-20">
                 <div className="space-y-3">
@@ -77,17 +77,17 @@ const TrendyPlants = () => {
                     The greenery adds a touch of nature and serenity to my desk, making it feel more inviting and calming.
                   </p>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div>
                     <p className="text-white font-extrabold text-2xl md:text-3xl">Rs. 399/-</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <button className="border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-bold px-8 py-3 rounded-2xl text-sm transition-all duration-300 cursor-pointer">
                       Explore
                     </button>
-                    <button 
+                    <button
                       className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
                       aria-label="Add to cart"
                     >

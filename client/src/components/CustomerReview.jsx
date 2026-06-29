@@ -35,7 +35,7 @@ const CustomerReview = () => {
       <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-green-500/5 rounded-full blur-[90px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        
+
         {/* Section Heading */}
         <SectionTitle title="Customer Review" />
 
@@ -66,11 +66,10 @@ const CustomerReview = () => {
                         return (
                           <Star
                             key={i}
-                            className={`w-3.5 h-3.5 ${
-                              isFilled || isHalfStar
+                            className={`w-3.5 h-3.5 ${isFilled || isHalfStar
                                 ? 'text-[#e9f908] fill-[#e9f908]'
                                 : 'text-gray-600'
-                            }`}
+                              }`}
                           />
                         );
                       })}

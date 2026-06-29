@@ -56,13 +56,13 @@ const plants = [
 
 const TopSellingPlants = () => {
   return (
-    <section 
-      id="shop" 
+    <section
+      id="shop"
       className="pt-32 pb-20 relative overflow-visible"
       style={{ background: 'radial-gradient(circle at top, #142313 0%, #0c140a 70%, #070c06 100%)' }}
     >
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10">
-        
+
         {/* Section Title with Custom Brackets */}
         <SectionTitle title="Our Top Selling Plants" className="mb-[85px]" />
 

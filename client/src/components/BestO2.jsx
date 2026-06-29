@@ -9,14 +9,14 @@ const BestO2 = () => {
       <div className="absolute top-1/3 left-10 w-[300px] h-[300px] bg-green-500/5 rounded-full blur-[80px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        
+
         {/* Section Heading */}
         <SectionTitle title="Our Best o2" />
 
         {/* Full-width glass card */}
         <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] overflow-visible border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 shadow-2xl group">
           <div className="flex flex-col lg:flex-row items-center p-8 sm:p-10 md:p-12 gap-8 lg:gap-12">
-            
+
             {/* Left: Plant Image */}
             <div className="w-full lg:w-1/2 flex justify-center relative z-10 lg:-mt-24 lg:-mb-16">
               <img
@@ -31,7 +31,7 @@ const BestO2 = () => {
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
                 We Have Small And Best O2 Plants Collection's
               </h3>
-              
+
               <div className="space-y-4">
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
                   Oxygen-producing plants, often referred to as O2 plants, release oxygen even at night. This is highly beneficial and distinguishes them from plants that only release oxygen during the day through normal photosynthesis.
@@ -46,16 +46,16 @@ const BestO2 = () => {
                 <button className="border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-bold px-8 py-3 rounded-2xl text-sm transition-all duration-300 cursor-pointer uppercase tracking-wider">
                   Explore
                 </button>
-                
+
                 {/* Navigation Arrows */}
                 <div className="flex items-center gap-3">
-                  <button 
+                  <button
                     className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
-                  <button 
+                  <button
                     className="w-12 h-12 rounded-2xl border border-white/40 bg-white/5 hover:bg-white hover:text-black hover:border-white flex items-center justify-center text-white transition-all duration-300 cursor-pointer"
                     aria-label="Next slide"
                   >

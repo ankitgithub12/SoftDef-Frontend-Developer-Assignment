@@ -41,7 +41,7 @@ const PlantCard = ({ image, name, description, price }) => {
         <h3 className="text-[21px] font-semibold text-white tracking-tight mb-[6px] leading-tight select-none">
           {name}
         </h3>
-        
+
         <p className="text-[13.5px] leading-[1.65] text-[#9CA3AF] font-normal select-none mb-4">
           {description}
         </p>
