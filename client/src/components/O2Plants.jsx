@@ -12,7 +12,7 @@ const O2Plants = () => {
         <SectionTitle title="Our Best o2" />
 
         {/* Featured O2 Card */}
-        <div className="glass-card max-w-5xl mx-auto mt-12 overflow-hidden border border-flora-border/50 bg-[#1A2E23]/60 backdrop-blur-md rounded-3xl transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group">
+        <div className="glass-card max-w-5xl mx-auto mt-16 sm:mt-20 overflow-hidden border border-flora-border/50 bg-[#1A2E23]/60 backdrop-blur-md rounded-3xl transition-all duration-500 hover:shadow-2xl hover:shadow-flora-accent/5 group">
           <div className="flex flex-col lg:flex-row items-center p-6 sm:p-8 md:p-12 gap-8 md:gap-12">
             {/* Left: Plant Image */}
             <div className="w-full lg:w-1/2 flex justify-center">

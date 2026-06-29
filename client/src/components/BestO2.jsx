@@ -14,7 +14,7 @@ const BestO2 = () => {
         <SectionTitle title="Our Best o2" />
 
         {/* Full-width glass card */}
-        <div className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] overflow-visible border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 shadow-2xl group">
+        <div className="mt-16 sm:mt-20 bg-white/[0.03] backdrop-blur-xl rounded-[40px] overflow-visible border border-white/[0.08] hover:border-white/[0.15] transition-all duration-500 shadow-2xl group">
           <div className="flex flex-col lg:flex-row items-center p-8 sm:p-10 md:p-12 gap-8 lg:gap-12">
 
             {/* Left: Plant Image */}
@@ -29,7 +29,7 @@ const BestO2 = () => {
             {/* Right: Info Area */}
             <div className="w-full lg:w-1/2 space-y-6 text-left font-sans">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                We Have Small And Best O2 Plants Collection's
+                We Have Small And Best O2 Plants Collections
               </h3>
 
               <div className="space-y-4">
