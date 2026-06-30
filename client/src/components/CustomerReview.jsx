@@ -1,6 +1,5 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import SectionTitle from './SectionTitle';
 import avatar1 from '../assets/avatar-1.png';
 import avatar2 from '../assets/avatar-2.png';
 import avatar3 from '../assets/avatar-3.png';
@@ -11,51 +10,57 @@ const reviews = [
     name: 'Shelly Russel',
     avatar: avatar1,
     rating: 4.5,
-    text: 'Best online plant shopping experience! The plants arrived healthy and beautiful, perfectly packed.',
+    text: "Just got my hands on some absolutely awesome plants, and I couldn't be happier!",
   },
   {
     id: 2,
     name: 'Lula Rolfson',
     avatar: avatar2,
-    rating: 5,
-    text: 'Good service for the customer. Agent very friendly and fast response. Recomended seller...',
+    rating: 4.5,
+    text: "Each one has its own unique charm and personality, and they've already started brightening up my space. The vibrant colors and fresh greenery make such a huge difference in my home.",
   },
   {
     id: 3,
-    name: 'Carol Hueis',
+    name: 'Carol Huels',
     avatar: avatar3,
-    rating: 5,
-    text: 'Good service for the customer. Agent very friendly and fast response. Recomended seller...',
+    rating: 4.5,
+    text: "It's like bringing a little piece of nature indoors. Definitely worth the investment—my plant collection has never looked better!",
   },
 ];
 
 const CustomerReview = () => {
   return (
-    <section className="py-20 bg-[#0f1f10] relative overflow-hidden">
+    <section className="py-20 customer-review-section relative overflow-hidden">
       <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-green-500/5 rounded-full blur-[90px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
         {/* Section Heading */}
-        <SectionTitle title="Customer Review" />
+        <div className="flex items-center justify-center mb-16">
+          <div className="customer-review-heading-container">
+            <h2 className="customer-review-heading">
+              Customer Review
+            </h2>
+          </div>
+        </div>
 
         {/* 3 Review Cards in a Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 font-sans">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-white/[0.03] backdrop-blur-xl rounded-[40px] p-6 border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 flex flex-col justify-between shadow-lg text-left"
+              className="review-card-custom text-left"
             >
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {/* Header: Avatar, Name & Stars */}
-                <div className="flex items-center gap-3.5">
+                <div className="flex items-center gap-4">
                   <img
                     src={review.avatar}
                     alt={`${review.name}'s avatar`}
-                    className="w-12 h-12 rounded-full border border-[#4ade80] object-cover"
+                    className="w-12 h-12 rounded-full object-cover select-none pointer-events-none"
                   />
                   <div>
-                    <h4 className="text-white font-bold text-base tracking-wide">
+                    <h4 className="text-white font-bold text-lg sm:text-[19px] tracking-wide leading-tight">
                       {review.name}
                     </h4>
                     {/* Stars */}
@@ -63,13 +68,28 @@ const CustomerReview = () => {
                       {Array.from({ length: 5 }).map((_, i) => {
                         const isHalfStar = review.rating % 1 !== 0 && i === Math.floor(review.rating);
                         const isFilled = i < Math.floor(review.rating);
+                        
+                        if (isHalfStar) {
+                          return (
+                            <div key={i} className="relative w-3.5 h-3.5 select-none pointer-events-none">
+                              {/* Empty star with yellow outline */}
+                              <Star className="absolute top-0 left-0 w-3.5 h-3.5 text-[#e9f908] fill-none" />
+                              {/* Half-filled star on top */}
+                              <div className="absolute top-0 left-0 w-[50%] h-full overflow-hidden">
+                                <Star className="w-3.5 h-3.5 text-[#e9f908] fill-[#e9f908] max-w-none" />
+                              </div>
+                            </div>
+                          );
+                        }
+
                         return (
                           <Star
                             key={i}
-                            className={`w-3.5 h-3.5 ${isFilled || isHalfStar
+                            className={`w-3.5 h-3.5 select-none pointer-events-none ${
+                              isFilled
                                 ? 'text-[#e9f908] fill-[#e9f908]'
-                                : 'text-gray-600'
-                              }`}
+                                : 'text-[#e9f908] fill-none'
+                            }`}
                           />
                         );
                       })}
@@ -78,8 +98,8 @@ const CustomerReview = () => {
                 </div>
 
                 {/* Review Text */}
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal italic">
-                  "{review.text}"
+                <p className="text-gray-300 text-sm sm:text-[15px] leading-relaxed font-normal">
+                  {review.text}
                 </p>
               </div>
             </div>

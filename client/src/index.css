@@ -187,3 +187,98 @@ body {
   transform: translateX(-50%) scale(1.08) rotate(2deg);
   filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.55));
 }
+
+/* ===== Custom Review Card ===== */
+.review-card-custom {
+  position: relative;
+  background-color: #172418;
+  border: 1.5px solid rgba(255, 255, 255, 0.05);
+  border-radius: 65px 35px 65px 35px / 35px 65px 35px 65px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: transform 350ms ease, box-shadow 350ms ease, border-color 350ms ease;
+  overflow: visible;
+}
+
+.review-card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(74, 222, 128, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Customer Review Section & Heading Styles ===== */
+.customer-review-section {
+  background: linear-gradient(135deg, #0F1B14 0%, #16231A 100%) !important;
+}
+
+.customer-review-heading-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 15px 30px;
+}
+
+.customer-review-heading {
+  position: relative;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 800;
+  color: #FFFFFF;
+  font-size: 2.25rem; /* ~36px mobile */
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  user-select: none;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .customer-review-heading {
+    font-size: 2.75rem; /* ~44px desktop */
+  }
+}
+
+/* Corner decorations */
+.customer-review-heading::before,
+.customer-review-heading::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 35px;
+  box-sizing: border-box;
+  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
+}
+
+/* Left Decoration: Vertical line left, curves to horizontal bottom */
+.customer-review-heading::before {
+  left: -18px;
+  bottom: -12px;
+  border-left: 3px solid #B89A3D;
+  border-bottom: 3px solid #B89A3D;
+  border-bottom-left-radius: 14px;
+}
+
+/* Right Decoration: Horizontal top, curves to vertical right */
+.customer-review-heading::after {
+  right: -18px;
+  top: -12px;
+  border-right: 3px solid #B89A3D;
+  border-top: 3px solid #B89A3D;
+  border-top-right-radius: 14px;
+}
+
+/* Hover Animation: Extend gold lines */
+.customer-review-heading-container:hover .customer-review-heading::before {
+  width: 65px;
+  height: 50px;
+}
+
+.customer-review-heading-container:hover .customer-review-heading::after {
+  width: 65px;
+  height: 50px;
+}
