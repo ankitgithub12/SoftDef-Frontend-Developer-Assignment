@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 import avatar1 from '../assets/avatar-1.png';
 import avatar2 from '../assets/avatar-2.png';
 import avatar3 from '../assets/avatar-3.png';
@@ -36,13 +37,7 @@ const CustomerReview = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
         {/* Section Heading */}
-        <div className="flex items-center justify-center mb-16">
-          <div className="customer-review-heading-container">
-            <h2 className="customer-review-heading">
-              Customer Review
-            </h2>
-          </div>
-        </div>
+        <SectionTitle title="Customer Review" className="mb-16" />
 
         {/* 3 Review Cards in a Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 font-sans">

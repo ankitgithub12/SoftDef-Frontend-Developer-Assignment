@@ -209,76 +209,108 @@ body {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* ===== Customer Review Section & Heading Styles ===== */
+/* ===== Customer Review Section Background ===== */
 .customer-review-section {
   background: linear-gradient(135deg, #0F1B14 0%, #16231A 100%) !important;
 }
 
-.customer-review-heading-container {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* ===== Modern Section Heading Styles ===== */
+.modern-section-heading {
   position: relative;
-  padding: 15px 30px;
-}
-
-.customer-review-heading {
-  position: relative;
-  font-family: var(--font-poppins), sans-serif;
-  font-weight: 800;
+  font-family: 'Poppins', 'Inter', 'Manrope', sans-serif;
+  font-weight: 800; /* Bold 700-800 weight */
   color: #FFFFFF;
-  font-size: 2.25rem; /* ~36px mobile */
+  font-size: 1.875rem; /* ~30px for mobile */
   text-align: center;
   letter-spacing: 0.5px;
   line-height: 1.2;
   user-select: none;
   display: inline-block;
+  
+  /* Space for lines and spacing:
+     Left/Right padding defines the distance from outer edge of container to start of text.
+     On mobile: padding-left/right: 32px.
+     With left/right absolute positioning of pseudoclasses at 16px,
+     the gap between vertical lines and text is exactly 32 - 16 = 16px! (Within 12-18px requirement).
+  */
+  padding: 10px 32px;
 }
 
 @media (min-width: 768px) {
-  .customer-review-heading {
-    font-size: 2.75rem; /* ~44px desktop */
+  .modern-section-heading {
+    font-size: 2.75rem; /* ~44px desktop (around 42-48px) */
+    padding: 14px 42px; /* On desktop: padding-left/right: 42px */
   }
 }
 
-/* Corner decorations */
-.customer-review-heading::before,
-.customer-review-heading::after {
+/* Base styles for the gold corner decorations using ::before and ::after */
+.modern-section-heading::before,
+.modern-section-heading::after {
   content: "";
   position: absolute;
-  width: 45px;
-  height: 35px;
+  width: 44px;
+  height: 32px;
   box-sizing: border-box;
-  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   pointer-events: none;
+  border-width: 0;
+  border-color: #B89A3D; /* Metallic gold (#B89A3D) */
+  border-style: solid;
+  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Left Decoration: Vertical line left, curves to horizontal bottom */
-.customer-review-heading::before {
-  left: -18px;
-  bottom: -12px;
-  border-left: 3px solid #B89A3D;
-  border-bottom: 3px solid #B89A3D;
-  border-bottom-left-radius: 14px;
+@media (min-width: 768px) {
+  .modern-section-heading::before,
+  .modern-section-heading::after {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+/* Left Decoration: Vertical line, curves to horizontal bottom */
+.modern-section-heading::before {
+  left: 16px; /* Spacing on mobile = 32px - 16px = 16px */
+  bottom: 0px;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+  border-bottom-left-radius: 14px; /* 12-16px */
+}
+
+@media (min-width: 768px) {
+  .modern-section-heading::before {
+    left: 24px; /* Spacing on desktop = 42px - 24px = 18px! (Within 12-18px) */
+    bottom: 2px;
+    border-bottom-left-radius: 15px;
+  }
 }
 
 /* Right Decoration: Horizontal top, curves to vertical right */
-.customer-review-heading::after {
-  right: -18px;
-  top: -12px;
-  border-right: 3px solid #B89A3D;
-  border-top: 3px solid #B89A3D;
-  border-top-right-radius: 14px;
+.modern-section-heading::after {
+  right: 16px; /* Spacing on mobile = 32px - 16px = 16px */
+  top: 0px;
+  border-right-width: 3px;
+  border-top-width: 3px;
+  border-top-right-radius: 14px; /* 12-16px */
 }
 
-/* Hover Animation: Extend gold lines */
-.customer-review-heading-container:hover .customer-review-heading::before {
-  width: 65px;
-  height: 50px;
+@media (min-width: 768px) {
+  .modern-section-heading::after {
+    right: 24px; /* Spacing on desktop = 42px - 24px = 18px! (Within 12-18px) */
+    top: 2px;
+    border-top-right-radius: 15px;
+  }
 }
 
-.customer-review-heading-container:hover .customer-review-heading::after {
-  width: 65px;
-  height: 50px;
+/* Smooth hover animation where gold lines slightly extend and shift for a 3D effect */
+.modern-section-heading:hover::before {
+  width: 75px;
+  height: 48px;
+  transform: translate(-4px, 2px);
+}
+
+.modern-section-heading:hover::after {
+  width: 75px;
+  height: 48px;
+  transform: translate(4px, -2px);
 }
