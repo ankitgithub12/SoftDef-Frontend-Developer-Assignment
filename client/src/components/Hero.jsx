@@ -134,7 +134,7 @@ const Hero = () => {
                 key={heroIndex}
                 src={activeHeroPlant.image}
                 alt={activeHeroPlant.alt}
-                className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[260px] h-[260px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none animate-fade-in-up"
+                className="absolute top-[-30px] left-1/2 -translate-x-1/2 w-[260px] h-[260px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none animate-fade-in-up"
               />
 
               {/* Info Area (Grouped at the bottom) */}
