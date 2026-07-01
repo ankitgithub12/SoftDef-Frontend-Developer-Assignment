@@ -2,6 +2,9 @@
 
 FloraVision is a premium, modern, and visually stunning web application for showcasing indoor plants and desk decorations. Designed with a dark, immersive aesthetic (`#0f1f10` dark forest theme) and smooth user experiences, this application presents an elegant curated catalog of plants, from trendy office greenery to high-oxygen-releasing plants.
 
+### 🔗 Live Demo
+Check out the live application here: **[https://softdef-frontend-developer-assignment.onrender.com](https://softdef-frontend-developer-assignment.onrender.com)**
+
 ---
 
 ## 🌟 Key Features
