@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Play, Star, ChevronRight } from 'lucide-react';
-import plantImg from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png'; // Aglaonema plant
+import plant1 from '../assets/c8eb5b1abede1308e0eaf899d1f7faae62a0c2f6.png'; // Aglaonema plant
+import plant2 from '../assets/5196aba58f7006d90ec0712ac1d01688cde1a537.png'; // Swiss cheese Plant
+import plant3 from '../assets/eb0351a5771ed55c7f3454bcce697dfe63237769.png'; // Sansevieria plant
 import avatar1 from '../assets/avatar-1.png';
 
+const heroPlants = [
+  {
+    image: plant1,
+    category: "Indoor Plant",
+    name: "Aglaonema plant",
+    alt: "Aglaonema plant"
+  },
+  {
+    image: plant2,
+    category: "Indoor Plant",
+    name: "Swiss cheese Plant",
+    alt: "Swiss cheese Plant"
+  },
+  {
+    image: plant3,
+    category: "Indoor Plant",
+    name: "Sansevieria plant",
+    alt: "Sansevieria plant"
+  }
+];
+
 const Hero = () => {
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  const handleNextHero = () => {
+    setHeroIndex((prev) => (prev === heroPlants.length - 1 ? 0 : prev + 1));
+  };
+
+  const activeHeroPlant = heroPlants[heroIndex];
   return (
     <section
       id="home"
@@ -101,22 +131,29 @@ const Hero = () => {
 
               {/* Floating Plant Image */}
               <img
-                src={plantImg}
-                alt="Aglaonema plant"
-                className="absolute top-[-70px] left-1/2 -translate-x-1/2 w-[210px] h-[210px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none"
+                key={heroIndex}
+                src={activeHeroPlant.image}
+                alt={activeHeroPlant.alt}
+                className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[260px] h-[260px] object-contain transition-all duration-500 filter drop-shadow-[0_18px_25px_rgba(0,0,0,0.45)] group-hover:scale-106 group-hover:-translate-y-1.5 group-hover:drop-shadow-[0_22px_32px_rgba(0,0,0,0.55)] pointer-events-none user-select-none animate-fade-in-up"
               />
 
               {/* Info Area (Grouped at the bottom) */}
               <div className="flex flex-col text-left mt-auto space-y-4">
                 <div>
                   <span className="text-[13px] font-medium text-gray-400 uppercase tracking-wider">
-                    Indoor Plant
+                    {activeHeroPlant.category}
                   </span>
                   <div className="flex items-center justify-between mt-1">
                     <h3 className="text-[21px] font-semibold text-white tracking-tight leading-tight">
-                      Aglaonema plant
+                      {activeHeroPlant.name}
                     </h3>
-                    <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white transition-all group-hover:translate-x-1" />
+                    <button
+                      onClick={handleNextHero}
+                      className="w-8 h-8 rounded-full border border-white/20 hover:border-white/60 bg-white/5 hover:bg-white/20 flex items-center justify-center text-white transition-all duration-300 cursor-pointer group/btn"
+                      aria-label="Next plant"
+                    >
+                      <ChevronRight className="w-5 h-5 text-white/70 group-hover/btn:text-white transition-all group-hover/btn:translate-x-0.5" />
+                    </button>
                   </div>
                 </div>
 
@@ -127,11 +164,16 @@ const Hero = () => {
                   Buy Now
                 </a>
 
-                {/* Card Pagination Dots: first dash active, others inactive dots */}
+                {/* Card Pagination Dots: click updates active plant */}
                 <div className="flex items-center justify-center gap-1.5 pt-1">
-                  <span className="w-4 h-1.5 rounded-full bg-white cursor-pointer transition-all"></span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer transition-all"></span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/20 cursor-pointer transition-all"></span>
+                  {heroPlants.map((_, index) => (
+                    <span
+                      key={index}
+                      onClick={() => setHeroIndex(index)}
+                      className={`cursor-pointer transition-all duration-300 rounded-full ${index === heroIndex ? 'w-4 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/20 hover:bg-white/40'
+                        }`}
+                    ></span>
+                  ))}
                 </div>
               </div>
             </div>
